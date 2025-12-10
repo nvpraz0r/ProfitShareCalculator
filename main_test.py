@@ -4,7 +4,7 @@
 from main import *
 
 def main():
-    random_func()
+    calculator()
 
 if __name__ == '__main__':
     main()
