@@ -1,0 +1,27 @@
+    from openpyxl import Workbook
+
+    # Create a new workbook
+    workbook = Workbook()
+
+    # Select the active worksheet (by default, it's named 'Sheet')
+    sheet = workbook.active
+    sheet.title = "My Data" # Rename the sheet
+
+    # Add headers
+    sheet['A1'] = "Name"
+    sheet['B1'] = "Age"
+    sheet['C1'] = "City"
+
+    # Add data
+    data = [
+        ("Alice", 30, "New York"),
+        ("Bob", 24, "London"),
+        ("Charlie", 35, "Paris")
+    ]
+
+    for row_data in data:
+        sheet.append(row_data)
+
+    # Save the workbook
+    workbook.save("my_excel_file.xlsx")
+    print("Excel file 'my_excel_file.xlsx' created successfully.")
