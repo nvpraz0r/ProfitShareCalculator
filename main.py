@@ -9,9 +9,11 @@
 # 
 # REFER TO example.txt
 # 
-# data structure planning:
+# data structure planning - ditionary should work just fine
 #
+# 
 # data = [
+# ("entity name", "xyz group"),
 # ("cash close out", 1234),
 # ("credit card close out", 4321),
 # ("total product costs", 1234),
