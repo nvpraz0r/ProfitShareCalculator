@@ -21,6 +21,16 @@
 # ("profit shared", 200)
 # ]
 # 
+# 
+# 
+# LAST LEFT OFF:
+#   - working on string input validation
+# 
+# 
+# 
+# 
+# 
+
 
 def calculator():
 
@@ -66,7 +76,7 @@ def calculator():
 
     # first param: is the prompt message
     # second param: is the DEMANDED data type
-    get_validation_method(" ending amount of cash.", 2)
+    get_validation_method("ending amount of cash.", 2)
 
 
 
@@ -83,13 +93,11 @@ def calculator():
 # switch case
 # 1 = float
 # 2 = string
-# 3 = date
 def get_validation_method(prompt, prompt_data_type):    
     
     # switch case
     # 1 = float
     # 2 = string
-    # 3 = date
     match prompt_data_type:
         case 1:
             # float
@@ -98,10 +106,6 @@ def get_validation_method(prompt, prompt_data_type):
         case 2:
             # string
             input_validation_string(prompt)
-            pass
-        case 3:
-            # date year/month/day
-            input_validation_date(prompt)
             pass
         case _:
             print("Error occurred somewhere during the validation process.")
@@ -128,21 +132,6 @@ def input_validation_string(prompt):
     while True:
         try:
             result : str = str(input(f"Please enter the {prompt}"))
-            print(result)
-            break
-        except ValueError:
-            print("Invalid input. Please enter the correct information.")
-            # wait for 2 seconds
-            # clear screen
-            # print menu
-
-
-# check if input is a valid date
-def input_validation_date(prompt):
-
-    while True:
-        try:
-            result = float(input(f"Please enter the {prompt}"))
             print(result)
             break
         except ValueError:
