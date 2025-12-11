@@ -64,7 +64,9 @@ def calculator():
 
 
 
-    get_user_input("entity", 2)
+    # first param: is the prompt message
+    # second param: is the DEMANDED data type
+    get_validation_method(" ending amount of cash.", 2)
 
 
 
@@ -78,7 +80,10 @@ def calculator():
 # of which method should be used to
 # validate user input
 #
-# should I even bother..?
+# switch case
+# 1 = float
+# 2 = string
+# 3 = date
 def get_validation_method(prompt, prompt_data_type):    
     
     # switch case
@@ -99,15 +104,16 @@ def get_validation_method(prompt, prompt_data_type):
             input_validation_date(prompt)
             pass
         case _:
-            print("Unknown error. Good luck!")
+            print("Error occurred somewhere during the validation process.")
 
 
-def input_validation_float(input):
+# check if input is a valid float
+def input_validation_float(prompt):
 
     while True:
         try:
-            number = float(input(f"Please enter the {input}"))
-            print(number)
+            result : float = float(input(f"Please enter the {prompt}"))
+            print(result)
             break
         except ValueError:
             print("Invalid input. Please enter the correct information.")
@@ -116,12 +122,13 @@ def input_validation_float(input):
             # print menu
 
 
-def input_validation_string(input):
+# check if input is a valid string
+def input_validation_string(prompt):
 
     while True:
         try:
-            number = float(input(f"Please enter the {input}"))
-            print(number)
+            result : str = str(input(f"Please enter the {prompt}"))
+            print(result)
             break
         except ValueError:
             print("Invalid input. Please enter the correct information.")
@@ -130,15 +137,30 @@ def input_validation_string(input):
             # print menu
 
 
-def input_validation_date(input):
+# check if input is a valid date
+def input_validation_date(prompt):
 
     while True:
         try:
-            number = float(input(f"Please enter the {input}"))
-            print(number)
+            result = float(input(f"Please enter the {prompt}"))
+            print(result)
             break
         except ValueError:
             print("Invalid input. Please enter the correct information.")
             # wait for 2 seconds
             # clear screen
             # print menu
+
+
+# display menu
+def menu():
+    print("\t\tProfit Share Calculator")
+    print("-----------------------------------------")
+    print("")
+    print("")
+    print("")
+
+
+# clear the screen
+def clear_screen():
+    pass
