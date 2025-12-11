@@ -58,8 +58,58 @@ def calculator():
 
     total_expenses : float = (turkey_purchased * turkey_price) + (ham_purchased * ham_price) + (beef_purchased * beef_price) + bread_total
 
-    profit : float = total_sales - total_expenses
+    profit : float = gross - total_expenses
 
     shared : float = profit / 2
 
-    # stuff here
+
+
+    get_user_input("entity")
+
+
+
+
+
+
+
+
+
+# 
+def get_user_input(prompt, prompt_data_type):
+    print(prompt)
+
+    input_validation(prompt)
+    
+    
+    # switch case
+    # 1 = float
+    # 2 = string
+    # 3 = date
+
+    match prompt_data_type:
+        case 1:
+            # float
+            pass
+        case 2:
+            # string
+            pass
+        case 3:
+            # date year/month/day
+            pass
+        case _:
+            print("Unknown error. Good luck!")
+
+
+
+def input_validation(prompt):
+
+    while True:
+        try:
+            number = float(input(f"Please enter the {prompt}"))
+            print(number)
+            break
+        except ValueError:
+            print("Invalid input. Please enter the correct information.")
+            # wait for 2 seconds
+            # clear screen
+            # print menu
