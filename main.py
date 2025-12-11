@@ -64,7 +64,7 @@ def calculator():
 
 
 
-    get_user_input("entity")
+    get_user_input("entity", 2)
 
 
 
@@ -74,38 +74,67 @@ def calculator():
 
 
 
-# 
-def get_user_input(prompt, prompt_data_type):
-    print(prompt)
-
-    input_validation(prompt)
-    
+# helper method that directs the flow
+# of which method should be used to
+# validate user input
+#
+# should I even bother..?
+def get_validation_method(prompt, prompt_data_type):    
     
     # switch case
     # 1 = float
     # 2 = string
     # 3 = date
-
     match prompt_data_type:
         case 1:
             # float
+            input_validation_float(prompt)
             pass
         case 2:
             # string
+            input_validation_string(prompt)
             pass
         case 3:
             # date year/month/day
+            input_validation_date(prompt)
             pass
         case _:
             print("Unknown error. Good luck!")
 
 
-
-def input_validation(prompt):
+def input_validation_float(input):
 
     while True:
         try:
-            number = float(input(f"Please enter the {prompt}"))
+            number = float(input(f"Please enter the {input}"))
+            print(number)
+            break
+        except ValueError:
+            print("Invalid input. Please enter the correct information.")
+            # wait for 2 seconds
+            # clear screen
+            # print menu
+
+
+def input_validation_string(input):
+
+    while True:
+        try:
+            number = float(input(f"Please enter the {input}"))
+            print(number)
+            break
+        except ValueError:
+            print("Invalid input. Please enter the correct information.")
+            # wait for 2 seconds
+            # clear screen
+            # print menu
+
+
+def input_validation_date(input):
+
+    while True:
+        try:
+            number = float(input(f"Please enter the {input}"))
             print(number)
             break
         except ValueError:
