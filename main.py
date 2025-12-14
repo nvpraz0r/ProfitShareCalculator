@@ -77,10 +77,12 @@ def calculator():
     shared : float = profit / 2
 
 
+    menu()
+
 
     # first param: is the prompt message
     # second param: is the DEMANDED data type
-    get_validation_method("ending amount of cash.", 2)
+    # get_validation_method("ending amount of cash.", 2)
 
 
 
@@ -147,12 +149,13 @@ def input_validation_string(prompt):
 
 # display menu
 def menu():
-    print("\t\tProfit Share Calculator")
-    print("-----------------------------------------")
-    print("")
-    print("")
-    print("")
-
+    print("         Profit Share Calculator")
+    print("+-----------------------------------------+")
+    print("|                                         |")
+    print("| This Program is designed to generate a  |")
+    print("| |")
+    print("|                                         |")
+    print("+-----------------------------------------+")
 
 # clear the screen
 def clear_screen():
@@ -162,3 +165,7 @@ def clear_screen():
     # For mac and linux (bash systems)
     else:
         _ = os.system('clear')
+
+# unsure if this is how I want to handle the main loop 
+def main_loop():
+    pass
