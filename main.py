@@ -32,6 +32,10 @@
 # 
 
 
+import os # used to clear terminal screen
+
+
+
 def calculator():
 
     # 
@@ -152,4 +156,9 @@ def menu():
 
 # clear the screen
 def clear_screen():
-    pass
+    # For windows
+    if os.name == 'nt':
+        _ = os.system('cls')
+    # For mac and linux (bash systems)
+    else:
+        _ = os.system('clear')
