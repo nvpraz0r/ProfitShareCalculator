@@ -26,7 +26,8 @@
 # LAST LEFT OFF:
 #   - working on string input validation
 # 
-# 
+# IDEAS:
+#   - object to dictionary???
 # 
 # 
 # 
@@ -75,6 +76,7 @@ def calculator():
     profit : float = gross - total_expenses
 
     shared : float = profit / 2
+
 
 
     menu()
