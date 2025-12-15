@@ -1,6 +1,7 @@
     # # 
     # # object is based off this list
     # # 
+    # # 
     # entity : str = ""
     # date = 0
 
@@ -62,7 +63,20 @@ class Event():
     def __init__(self,
                  entity, date, cash_end, credit_card,
                  turkey_returned, ham_returned, beef_returned,
-                 turkey_prince, ham_price, beef_price,
+                 turkey_price, ham_price, beef_price,
                  turkey_purchased, ham_purchased, beef_purchased,
                  bread_purchased,):
         self.entity = entity
+        self.date = date
+        self.cash_end = cash_end
+        self.credit_card = credit_card
+        self.turkey_returned = turkey_returned
+        self.ham_returned = ham_returned
+        self.beef_returned = beef_returned
+        self.turkey_price = turkey_price
+        self.ham_price = ham_price
+        self.beef_price = beef_price
+        self.turkey_purchased = turkey_purchased
+        self.ham_purchased = ham_purchased
+        self.beef_purchased = beef_purchased
+        self.bread_purchased = bread_purchased
