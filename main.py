@@ -149,12 +149,6 @@ def input_validation_string(prompt):
             # print menu
 
 
-# main program loop
-def main():
-    
-    pass
-
-
 # display intro header
 def intro_to_application():
     print("         Profit Share Calculator")
