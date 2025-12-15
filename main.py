@@ -79,7 +79,7 @@ def calculator():
 
 
 
-    menu()
+    intro_to_application()
 
 
     # first param: is the prompt message
@@ -149,15 +149,24 @@ def input_validation_string(prompt):
             # print menu
 
 
-# display menu
-def menu():
+# main program loop
+def main():
+    
+    pass
+
+
+# display intro header
+def intro_to_application():
     print("         Profit Share Calculator")
     print("+-----------------------------------------+")
     print("|                                         |")
-    print("| This Program is designed to generate a  |")
-    print("| |")
+    print("| This Program is designed to generate    |")
+    print("| an excel spreadsheet.                   |")
     print("|                                         |")
     print("+-----------------------------------------+")
+    print()
+
+    input_validation_string("")
 
 # clear the screen
 def clear_screen():
