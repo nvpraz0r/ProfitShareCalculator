@@ -160,7 +160,6 @@ def intro_to_application():
     print("+-----------------------------------------+")
     print()
 
-    input_validation_string("")
 
 # clear the screen
 def clear_screen():
@@ -173,4 +172,18 @@ def clear_screen():
 
 # unsure if this is how I want to handle the main loop 
 def main_loop():
+    # loop through a list of prompts that are needed
+    # 
+    #   dict [
+    #   ("entity name", 1),
+    #   ("date", 2),
+    #   ("XZY", ),
+    #   ()
+    #   ]
+    # 
+    #   for prompt in prompts
+    #       get_validation_method(prompt[0], prompt[1])
+    #
+    #       HOPEFULLY this will loop through all the prompts
+    #    
     pass
