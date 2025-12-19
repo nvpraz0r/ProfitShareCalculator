@@ -65,7 +65,7 @@ class Event():
                  turkey_returned, ham_returned, beef_returned,
                  turkey_price, ham_price, beef_price,
                  turkey_purchased, ham_purchased, beef_purchased,
-                 bread_purchased,):
+                 bread_purchased):
         self.entity = entity
         self.date = date
         self.cash_end = cash_end
@@ -80,3 +80,6 @@ class Event():
         self.ham_purchased = ham_purchased
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
+
+    def generate_file():
+        pass

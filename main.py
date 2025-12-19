@@ -35,6 +35,7 @@
 
 import os # used to clear terminal screen
 
+from Event import *
 
 
 def calculator():
@@ -79,7 +80,7 @@ def calculator():
 
 
 
-    intro_to_application()
+    main_loop()
 
 
     # first param: is the prompt message
@@ -186,4 +187,34 @@ def main_loop():
     #
     #       HOPEFULLY this will loop through all the prompts
     #    
-    pass
+
+
+    prompts = [
+        ("one",1),
+        ("two",1),
+        ("three",1),
+        ("four",1),
+        ("five",1),
+        ("six",1),
+        ("seven",1),
+        ("eight",1),
+        ("nine",1),
+        ("ten",1),
+        ("eleven",1),
+        ("twelve",1),
+        ("thirteen",1),
+        ("fourteen",1)
+    ]
+
+    responses = []
+
+    running : bool = True
+
+    while running:
+        intro_to_application()
+
+        for prompt in prompts:
+            responses.append(get_validation_method(prompt[0],prompt[1]))
+
+    Event(*responses)
+    Event.generate_file()
