@@ -5,33 +5,10 @@
 #   - cash close out, credit card close out, product costs; you get the idea
 # - Once all the data has been confirmed generate a CSV file or excel spreadsheet
 # 
-
 # 
-# REFER TO example.txt
+# CURRENT PROBLEM
+#   - responses array not filling with user input
 # 
-# data structure planning - ditionary should work just fine
-#
-# 
-# data = [
-# ("entity name", "xyz group"),
-# ("cash close out", 1234),
-# ("credit card close out", 4321),
-# ("total product costs", 1234),
-# ("returned meat", 12),
-# ("profit shared", 200)
-# ]
-# 
-# 
-# 
-# LAST LEFT OFF:
-#   - working on string input validation
-# 
-# IDEAS:
-#   - object to dictionary???
-# 
-# 
-# 
-
 
 import os # used to clear terminal screen
 
@@ -82,19 +59,6 @@ def calculator():
 
     main_loop()
 
-
-    # first param: is the prompt message
-    # second param: is the DEMANDED data type
-    # get_validation_method("ending amount of cash.", 2)
-
-
-
-
-
-
-
-
-
 # helper method that directs the flow
 # of which method should be used to
 # validate user input
@@ -127,7 +91,7 @@ def input_validation_float(prompt):
         try:
             result : float = float(input(f"Please enter the {prompt}"))
             print(result)
-            break
+            return result
         except ValueError:
             print("Invalid input. Please enter the correct information.")
             # wait for 2 seconds
@@ -142,13 +106,12 @@ def input_validation_string(prompt):
         try:
             result : str = str(input(f"Please enter the {prompt}"))
             print(result)
-            break
+            return result
         except ValueError:
             print("Invalid input. Please enter the correct information.")
             # wait for 2 seconds
             # clear screen
             # print menu
-
 
 # display intro header
 def intro_to_application():
@@ -206,15 +169,56 @@ def main_loop():
         ("fourteen",1)
     ]
 
+    # store user responses
     responses = []
 
     running : bool = True
 
     while running:
+        # 
         intro_to_application()
 
         for prompt in prompts:
-            responses.append(get_validation_method(prompt[0],prompt[1]))
+            value = get_validation_method(prompt[0],prompt[1])
+            responses.append(value)
+            
+        running = False
 
-    Event(*responses)
-    Event.generate_file()
+
+    # send the responses to Event.py
+    for i in responses:
+        print(i)
+
+    # generate the file
+
+    # continue?
+
+
+
+
+# code flow
+# 
+# 
+# dict = [variable, data type]
+# data type float or string
+# 
+# 
+# intro
+# enter entity
+# enter date
+# cash end
+# credit card
+# returned amount of turkey
+# returned amount of ham
+# returned amount of beef
+# price of turkey per pound
+# price of ham per pound
+# price of beef per pound
+# amount of turkey purchased
+# amount of ham purchased
+# amount of beef purchased
+# amount of hamburger buns purchase
+# 
+# send the variables 
+# 
+# 
