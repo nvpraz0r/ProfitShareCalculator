@@ -9,6 +9,35 @@
 # CURRENT PROBLEM
 #   - responses array not filling with user input
 # 
+# 
+# 
+# 
+# code flow
+# 
+# 
+# dict = [variable, data type]
+# data type float or string
+# 
+# 
+# intro
+# enter entity
+# enter date
+# cash end
+# credit card
+# returned amount of turkey
+# returned amount of ham
+# returned amount of beef
+# price of turkey per pound
+# price of ham per pound
+# price of beef per pound
+# amount of turkey purchased
+# amount of ham purchased
+# amount of beef purchased
+# amount of hamburger buns purchase
+# 
+# send the variables 
+# 
+# 
 
 import os # used to clear terminal screen
 
@@ -74,12 +103,10 @@ def get_validation_method(prompt, prompt_data_type):
     match prompt_data_type:
         case 1:
             # float
-            input_validation_float(prompt)
-            pass
+            return input_validation_float(prompt)
         case 2:
             # string
-            input_validation_string(prompt)
-            pass
+            return input_validation_string(prompt)
         case _:
             print("Error occurred somewhere during the validation process.")
 
@@ -186,39 +213,12 @@ def main_loop():
 
 
     # send the responses to Event.py
+    # test messages
+    clear_screen()
+    print("printing responses")
     for i in responses:
         print(i)
 
     # generate the file
 
     # continue?
-
-
-
-
-# code flow
-# 
-# 
-# dict = [variable, data type]
-# data type float or string
-# 
-# 
-# intro
-# enter entity
-# enter date
-# cash end
-# credit card
-# returned amount of turkey
-# returned amount of ham
-# returned amount of beef
-# price of turkey per pound
-# price of ham per pound
-# price of beef per pound
-# amount of turkey purchased
-# amount of ham purchased
-# amount of beef purchased
-# amount of hamburger buns purchase
-# 
-# send the variables 
-# 
-# 
