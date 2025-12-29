@@ -40,7 +40,7 @@ class Event():
     shared : float = profit / 2
 
     # Every variable will go into this array
-    everything = []
+    everything = {}
 
     def __init__(self,
                  entity, date, cash_end, credit_card,

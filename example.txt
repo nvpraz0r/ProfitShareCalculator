@@ -29,8 +29,16 @@
 
 
 
-    A   B   C
-1   A1  B1  C1
-2   A2  B2  C2
-3   A3  B3  C3
-X   AX  BX  CX
+    A   B
+1   A1  B1
+2   A2  B2
+3   A3  B3
+X   AX  BX
+
+
+example of how the excel file "SHOULD" look
+    A       B
+1   entity  First Friday
+2   date    12/1/25
+3   start   600.0
+X   etc..   etc..
