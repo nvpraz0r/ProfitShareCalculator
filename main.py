@@ -87,6 +87,7 @@ def calculator():
 
 
     main_loop()
+    Event.generate_array()
 
 # helper method that directs the flow
 # of which method should be used to

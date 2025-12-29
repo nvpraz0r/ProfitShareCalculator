@@ -40,7 +40,7 @@ class Event():
     shared : float = profit / 2
 
     # Every variable will go into this array
-    everything = {}
+    class_var_list = {}
 
     def __init__(self,
                  entity, date, cash_end, credit_card,
@@ -63,9 +63,10 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
-    # This method generates 
+    # This method generates the array of tuples
     def generate_array():
-        pass
+        class_var_list = [value for key, value in Event.__dict__.items() if not key.startswith('_') and not callable(value)]
+        print(class_var_list)
 
     # This method generates the excel file with the help of generate_array() method
     def generate_file(everything):
