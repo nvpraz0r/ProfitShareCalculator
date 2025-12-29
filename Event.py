@@ -2,8 +2,8 @@
 class Event():
 
     #
-    entity : str = ""
-    date : str = ""
+    entity : str = "" # user input
+    date : str = "" #user input
 
     # 
     CASH_START : float = 600.00
@@ -39,8 +39,8 @@ class Event():
 
     shared : float = profit / 2
 
-
-
+    # Every variable will go into this array
+    everything = []
 
     def __init__(self,
                  entity, date, cash_end, credit_card,
@@ -63,5 +63,10 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
-    def generate_file():
+    # This method generates 
+    def generate_array():
+        pass
+
+    # This method generates the excel file with the help of generate_array() method
+    def generate_file(everything):
         pass
