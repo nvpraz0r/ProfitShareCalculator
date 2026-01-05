@@ -78,6 +78,8 @@ class Event():
         """
         This method populates the class_var_list with the class Event variables.
         """
+        # I have no idea how this works
+        # by the looks of it - it prints all the variables in the class
         class_var_list = [value for key, value in Event.__dict__.items() if not key.startswith('_') and not callable(value)]
         print(class_var_list)
 

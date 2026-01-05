@@ -9,15 +9,24 @@ from Event import *
 # 
 # 
 
+# yay global variables bad practices start now :D
+# responses array is where all the user input is stored
+# which will EVETUALLY be sent to Event
+responses = []
 
 # main_method that calls all the other functions
 def main_method():
-    """
-    Docstring for calculator
-    """
 
     main_loop()
+
     Event.generate_array()
+
+    # send the responses to Event.py
+    # test messages
+
+    print("printing responses")
+    for i in responses:
+        print(i)
 
 
 # unsure if this is how I want to handle the main loop 
@@ -45,7 +54,7 @@ def main_loop():
     ]
 
     # store user responses
-    responses = []
+    # responses = []
 
     running : bool = True
 
@@ -155,14 +164,6 @@ def clear_screen():
     # For mac and linux (bash systems)
     else:
         _ = os.system('clear')
-
-
-    # send the responses to Event.py
-    # test messages
-    clear_screen()
-    print("printing responses")
-    for i in responses:
-        print(i)
 
 
 # generate the file
