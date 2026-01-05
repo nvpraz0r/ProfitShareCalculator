@@ -141,6 +141,7 @@ def input_validation_string(prompt):
             # clear screen
             # print menu
 
+
 # display intro header
 def intro_to_application():
     print("         Profit Share Calculator")
@@ -162,6 +163,7 @@ def clear_screen():
     else:
         _ = os.system('clear')
 
+
 # unsure if this is how I want to handle the main loop 
 def main_loop():
     # loop through a list of prompts that are needed
@@ -178,7 +180,6 @@ def main_loop():
     #
     #       HOPEFULLY this will loop through all the prompts
     #    
-
 
     prompts = [
         ("one",1),
