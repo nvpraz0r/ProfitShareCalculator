@@ -53,10 +53,16 @@ def main_loop():
         # display program title
         intro_to_application()
 
+        # loop through prompts
         for prompt in prompts:
-            value = get_validation_method(prompt[0],prompt[1])
+            # get_validation_method calls input_validation_float or input_validation_string
+            # gvm calls ivf or ivs due to prompt[1]'s designation - which is a hardcoded happy path shot caller
+            # ivf or ivs returns their respective data type which is stored in "value" - user input
+            value = get_validation_method(prompt[0],prompt[1]) # refactor this please - too many nested functions
+            # add value - user input - into responses array
             responses.append(value)
-            
+
+        # end while loop
         running = False
 
 
@@ -158,6 +164,7 @@ def clear_screen():
     for i in responses:
         print(i)
 
-    # generate the file
 
-    # ask user if they need to record a new event
+# generate the file
+def generate_excel_file():
+    pass
