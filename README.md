@@ -11,4 +11,4 @@ The intent behind this project is to speed up a problem I find myself constantly
 
 ### Tech Stack:
 - python
-- openpyxl
+- pandas
