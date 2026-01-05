@@ -71,6 +71,7 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
+
     # Am I able to prevent calling this before the variables have been populated?
     # If not no big deal this is a personal project
     def generate_array():
@@ -79,6 +80,7 @@ class Event():
         """
         class_var_list = [value for key, value in Event.__dict__.items() if not key.startswith('_') and not callable(value)]
         print(class_var_list)
+
 
     # This method generates the excel file with the help of generate_array() method
     def generate_file(everything):

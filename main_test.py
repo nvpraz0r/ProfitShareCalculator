@@ -4,7 +4,7 @@
 from main import *
 
 def main():
-    calculator()
+    main_method()
 
 if __name__ == '__main__':
     main()

@@ -1,131 +1,30 @@
-# 
-# ideas:
-# - CLI interface doesn't need to be fancy
-# - Prompt user for various data points
-#   - cash close out, credit card close out, product costs; you get the idea
-# - Once all the data has been confirmed generate a CSV file or excel spreadsheet
-# 
-# 
-# CURRENT PROBLEM
-#   - responses array not filling with user input
-# 
-# 
-# 
-# 
-# code flow
-# 
-# 
-# dict = [variable, data type]
-# data type float or string
-# 
-# 
-# intro
-# enter entity
-# enter date
-# cash end
-# credit card
-# returned amount of turkey
-# returned amount of ham
-# returned amount of beef
-# price of turkey per pound
-# price of ham per pound
-# price of beef per pound
-# amount of turkey purchased
-# amount of ham purchased
-# amount of beef purchased
-# amount of hamburger buns purchase
-# 
-# send the variables 
-# 
-# 
-
 import os # used to clear terminal screen
 
 from Event import *
 
-# Main method that calls all the other functions
-def calculator():
+# 
+# 
+# 
+# 
+# 
+# 
+
+
+# main_method that calls all the other functions
+def main_method():
+    """
+    Docstring for calculator
+    """
+
     main_loop()
     Event.generate_array()
-    
-
-# helper method that directs the flow
-# of which method should be used to
-# validate user input
-#
-# switch case
-# 1 = float
-# 2 = string
-def get_validation_method(prompt, prompt_data_type):    
-    
-    # switch case
-    # 1 = float
-    # 2 = string
-    match prompt_data_type:
-        case 1:
-            # float
-            return input_validation_float(prompt)
-        case 2:
-            # string
-            return input_validation_string(prompt)
-        case _:
-            print("Error occurred somewhere during the validation process.")
-
-
-# check if input is a valid float
-def input_validation_float(prompt):
-
-    while True:
-        try:
-            result : float = float(input(f"Please enter the {prompt}"))
-            print(result)
-            return result
-        except ValueError:
-            print("Invalid input. Please enter the correct information.")
-            # wait for 2 seconds
-            # clear screen
-            # print menu
-
-
-# check if input is a valid string
-def input_validation_string(prompt):
-
-    while True:
-        try:
-            result : str = str(input(f"Please enter the {prompt}"))
-            print(result)
-            return result
-        except ValueError:
-            print("Invalid input. Please enter the correct information.")
-            # wait for 2 seconds
-            # clear screen
-            # print menu
-
-
-# display intro header
-def intro_to_application():
-    print("         Profit Share Calculator")
-    print("+-----------------------------------------+")
-    print("|                                         |")
-    print("| This Program is designed to generate    |")
-    print("| an excel spreadsheet.                   |")
-    print("|                                         |")
-    print("+-----------------------------------------+")
-    print()
-
-
-# clear the screen
-def clear_screen():
-    # For windows
-    if os.name == 'nt':
-        _ = os.system('cls')
-    # For mac and linux (bash systems)
-    else:
-        _ = os.system('clear')
 
 
 # unsure if this is how I want to handle the main loop 
 def main_loop():
+    """
+    Docstring for main_loop
+    """
     # placeholder for prompts
     # this currently exists as proof of concept
     prompts = [
@@ -159,6 +58,97 @@ def main_loop():
             responses.append(value)
             
         running = False
+
+
+# helper method that directs the flow
+# of which method should be used to
+# validate user input
+#
+# switch case
+# 1 = float
+# 2 = string
+def get_validation_method(prompt, prompt_data_type):    
+    """
+    Docstring for get_validation_method
+    
+    :param prompt: Description
+    :param prompt_data_type: Description
+    """    
+    # switch case
+    # 1 = float
+    # 2 = string
+    match prompt_data_type:
+        case 1:
+            # float
+            return input_validation_float(prompt)
+        case 2:
+            # string
+            return input_validation_string(prompt)
+        case _:
+            print("Error occurred somewhere during the validation process.")
+
+
+# check if input is a valid float
+def input_validation_float(prompt):
+    """
+    Docstring for input_validation_float
+    
+    :param prompt: Description
+    """
+    while True:
+        try:
+            result : float = float(input(f"Please enter the {prompt}"))
+            print(result)
+            return result
+        except ValueError:
+            print("Invalid input. Please enter the correct information.")
+            # wait for 2 seconds
+            # clear screen
+            # print menu
+
+
+# check if input is a valid string
+def input_validation_string(prompt):
+    """
+    Docstring for input_validation_string
+    
+    :param prompt: Description
+    """
+    while True:
+        try:
+            result : str = str(input(f"Please enter the {prompt}"))
+            print(result)
+            return result
+        except ValueError:
+            print("Invalid input. Please enter the correct information.")
+            # wait for 2 seconds
+            # clear screen
+            # print menu
+
+
+# display intro header
+def intro_to_application():
+    print("         Profit Share Calculator")
+    print("+-----------------------------------------+")
+    print("|                                         |")
+    print("| This Program is designed to generate    |")
+    print("| an excel spreadsheet.                   |")
+    print("|                                         |")
+    print("+-----------------------------------------+")
+    print()
+
+
+# clear the screen
+def clear_screen():
+    """
+    Docstring for clear_screen
+    """
+    # For windows
+    if os.name == 'nt':
+        _ = os.system('cls')
+    # For mac and linux (bash systems)
+    else:
+        _ = os.system('clear')
 
 
     # send the responses to Event.py
