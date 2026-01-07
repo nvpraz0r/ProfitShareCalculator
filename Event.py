@@ -50,6 +50,8 @@ class Event():
     # Every variable will go into this array
     class_var_list = {}
 
+    event_responses = []
+
     def __init__(self,
                  entity, date, cash_end, credit_card,
                  turkey_returned, ham_returned, beef_returned,
@@ -87,3 +89,14 @@ class Event():
     # This method generates the excel file with the help of generate_array() method
     def generate_file(everything):
         pass
+
+
+    # in order to access global variables
+    # use "global foo"
+    def test_responses(responses):
+        global event_responses
+        event_responses = responses
+    
+    def print_responses():
+        global event_responses
+        print(event_responses)

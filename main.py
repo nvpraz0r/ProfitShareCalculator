@@ -3,8 +3,8 @@ import os # used to clear terminal screen
 from Event import *
 
 # 
-# 
-# 
+# future plans:
+#   - use tkinter to incorporate a GUI
 # 
 # 
 # 
@@ -24,9 +24,9 @@ def main_method():
     # send the responses to Event.py
     # test messages
 
-    print("printing responses")
-    for i in responses:
-        print(i)
+    # Testing input
+    Event.test_responses(responses)
+    Event.print_responses()
 
 
 # unsure if this is how I want to handle the main loop 
