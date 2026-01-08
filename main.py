@@ -8,7 +8,9 @@ from Event import *
 # 
 # to do:
 #   - fix the prompts to reflect proper user prompts ✅
-#   - hook up inputs to Event
+#   - hook up inputs to Event ✅
+#   - figure out why variables are not getting set properly in event class 
+#                               (might have to get rid of global variables)
 # 
 # 
 
