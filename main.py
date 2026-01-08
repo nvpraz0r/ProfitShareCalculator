@@ -7,7 +7,7 @@ from Event import *
 #   - use tkinter to incorporate a GUI
 # 
 # to do:
-#   - fix the prompts to reflect proper user prompts
+#   - fix the prompts to reflect proper user prompts ✅
 #   - hook up inputs to Event
 # 
 # 
@@ -22,14 +22,14 @@ def main_method():
 
     main_loop()
 
-    Event.generate_array()
-
     # send the responses to Event.py
+    myvar = Event(*responses)
     # test messages
+    myvar.generate_array()
 
     # Testing input
-    Event.test_responses(responses)
-    Event.print_responses()
+    # Event.test_responses(responses)
+    # Event.print_responses()
 
 
 # unsure if this is how I want to handle the main loop 
@@ -41,21 +41,25 @@ def main_loop():
     # this currently exists as proof of concept
     # refactor prompts array to reflect proper prompts
     prompts = [
-        ("one",1),
-        ("two",1),
-        ("three",1),
-        ("four",1),
-        ("five",1),
-        ("six",1),
-        ("seven",1),
-        ("eight",1),
-        ("nine",1),
-        ("ten",1),
-        ("eleven",1),
-        ("twelve",1),
-        ("thirteen",1),
-        ("fourteen",1)
+        ("entities' name",2),
+        ("date of the event",2),
+        ("closing cash amount",1),
+        ("credit card amount",1),
+        ("amount of Turkey returned (in pounds)",1),
+        ("amount of Ham returned (in pounds)",1),
+        ("amount of Beef returned (in pounds)",1),
+        ("price per pound of Turkey",1),
+        ("price per pound of Ham",1),
+        ("price per pound of Beef",1),
+        ("amount of Turkey purchase (in pounds)",1),
+        ("amount of Ham purchased (in pounds)",1),
+        ("amount of Beef purchased (in pounds)",1),
+        ("amount of Bread purchased",1)
     ]
+    # "Please enter the {prompt}"
+    # switch case
+    # 1 = float
+    # 2 = string
 
     #
     running : bool = True
@@ -114,7 +118,7 @@ def input_validation_float(prompt):
     """
     while True:
         try:
-            result : float = float(input(f"Please enter the {prompt}"))
+            result : float = float(input(f"Please enter the {prompt}.\n"))
             print(result)
             return result
         except ValueError:
@@ -133,7 +137,7 @@ def input_validation_string(prompt):
     """
     while True:
         try:
-            result : str = str(input(f"Please enter the {prompt}"))
+            result : str = str(input(f"Please enter the {prompt}.\n"))
             print(result)
             return result
         except ValueError:

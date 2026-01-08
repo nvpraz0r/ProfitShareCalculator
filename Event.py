@@ -44,13 +44,12 @@ class Event():
     # 
     shared : float = profit / 2
 
-    # file name
-    file_name : str = date + "_" + entity
+
 
     # Every variable will go into this array
-    class_var_list = {}
+    # class_var_list = {}
 
-    event_responses = []
+    # event_responses = []
 
     def __init__(self,
                  entity, date, cash_end, credit_card,
@@ -76,7 +75,7 @@ class Event():
 
     # Am I able to prevent calling this before the variables have been populated?
     # If not no big deal this is a personal project
-    def generate_array():
+    def generate_array(self):
         """
         This method populates the class_var_list with the class Event variables.
         """
@@ -88,6 +87,8 @@ class Event():
 
     # This method generates the excel file with the help of generate_array() method
     def generate_file(everything):
+        # file name
+        file_name : str = date + "_" + entity
         pass
 
 
