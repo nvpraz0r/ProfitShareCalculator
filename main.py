@@ -6,13 +6,15 @@ from Event import *
 # future plans:
 #   - use tkinter to incorporate a GUI
 # 
-# 
+# to do:
+#   - fix the prompts to reflect proper user prompts
+#   - hook up inputs to Event
 # 
 
 # yay global variables bad practices start now :D
 # responses array is where all the user input is stored
 # which will EVETUALLY be sent to Event
-responses = []
+responses = [] # this exists to be called from the main_method()
 
 # main_method that calls all the other functions
 def main_method():
@@ -36,6 +38,7 @@ def main_loop():
     """
     # placeholder for prompts
     # this currently exists as proof of concept
+    # refactor prompts array to reflect proper prompts
     prompts = [
         ("one",1),
         ("two",1),
@@ -53,11 +56,9 @@ def main_loop():
         ("fourteen",1)
     ]
 
-    # store user responses
-    # responses = []
-
+    #
     running : bool = True
-
+    # 
     while running:
         # display program title
         intro_to_application()
