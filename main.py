@@ -10,6 +10,7 @@ from Event import *
 #   - fix the prompts to reflect proper user prompts
 #   - hook up inputs to Event
 # 
+# 
 
 # yay global variables bad practices start now :D
 # responses array is where all the user input is stored
