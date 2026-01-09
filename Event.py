@@ -48,17 +48,21 @@ class Event():
 
 
     # create an array 
+    # print results (for now)
     def generate_array(self):
         """
         This method populates the class_var_list with the class Event variables.
         """
-        class_var_list = [value for key, value in Event.__dict__.items() if not key.startswith('_') and not callable(value)]
-        print_vars(class_var_list)
+        # class_var_list = [value for key, value in Event.__dict__.items() if not key.startswith('_') and not callable(value)]
 
-    
-    # 
-    def print_vars(list_of_var):
-        print(list_of_var)
+        class_var_arr = {}
+
+        for key, value, in vars(Event).items():
+            if not key.startswith('__'):
+                class_var_arr[key] = value
+                
+
+        print(class_var_arr)
 
 
     # This method generates the excel file with the help of generate_array() method
