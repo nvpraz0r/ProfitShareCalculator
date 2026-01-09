@@ -26,12 +26,9 @@ def main_method():
 
     # send the responses to Event.py
     myvar = Event(*responses)
-    # test messages
+    # print data
     myvar.generate_array()
 
-    # Testing input
-    # Event.test_responses(responses)
-    # Event.print_responses()
 
 
 # unsure if this is how I want to handle the main loop 
