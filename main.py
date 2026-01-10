@@ -9,8 +9,11 @@ from Event import *
 # to do:
 #   - fix the prompts to reflect proper user prompts ✅
 #   - hook up inputs to Event ✅
-#   - figure out why variables are not getting set properly in event class 
-#                               (might have to get rid of global variables)
+# 
+#   - dummy up responses so I don't have to manually enter 14 variables when testing
+#   - finish up calculate_totals()
+#   - 
+# 
 # 
 # 
 
@@ -26,8 +29,6 @@ def main_method():
 
     # send the responses to Event.py
     myvar = Event(*responses)
-    # print data
-    myvar.generate_array()
 
 
 

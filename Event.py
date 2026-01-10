@@ -23,32 +23,37 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
+
+    
+    #
+    def calculate_totals(self):
         CASH_START : float = 600.00
 
         # 
-        credit_card_tax : float = credit_card * 0.03
+        credit_card_tax : float = self.credit_card * 0.03
         # 
-        credit_card_net : float = credit_card - credit_card_tax
+        credit_card_net : float = self.credit_card - credit_card_tax
         # 
-        total_sales : float = (credit_card_net + cash_end) - CASH_START
+        total_sales : float = (credit_card_net + self.cash_end) - CASH_START
+
 
         # 
-        total_returned : float = (turkey_returned * turkey_price) + (ham_returned * ham_price) + (beef_returned * beef_price)
+        total_returned : float = (self.turkey_returned * self.turkey_price) + (self.ham_returned * self.ham_price) + (self.beef_returned * self.beef_price)
         # 
         gross = total_returned + total_sales
 
 
-        bread_total_cost : int = bread_purchased * 10
         # 
-        total_expenses : float = (turkey_purchased * turkey_price) + (ham_purchased * ham_price) + (beef_purchased * beef_price) + bread_total_cost
+        bread_total_cost : int = self.bread_purchased * 10
+        # 
+        total_expenses : float = (self.turkey_purchased * self.turkey_price) + (self.ham_purchased * self.ham_price) + (self.beef_purchased * self.beef_price) + bread_total_cost
         # 
         profit : float = gross - total_expenses
         # 
         shared : float = profit / 2
 
 
-    # create an array 
-    # print results (for now)
+    # NTS -> probably will have to manually add the values...
     def generate_array(self):
         """
         This method populates the class_var_list with the class Event variables.
@@ -66,6 +71,8 @@ class Event():
 
 
     # This method generates the excel file with the help of generate_array() method
+    # "everything" is all the variables in this class
+    # need them on the excel sheet for transparency
     def generate_file(self, everything):
         # file name
         file_name : str = self.date + "_" + self.entity
