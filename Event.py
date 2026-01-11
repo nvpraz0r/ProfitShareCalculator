@@ -23,34 +23,69 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
+    # class variables
+    CASH_START : float = 600.00
 
-    
+    # 
+    credit_card_tax : float = 0.00
+    # 
+    credit_card_net : float = 0.00
+    # 
+    total_sales : float = 0.00
+
+
+    # 
+    total_returned : float = 0.00
+    # 
+    gross : float = 0.00
+
+
+    # 
+    bread_total_cost : float = 0.00
+    # 
+    total_expenses : float = 0.00
+    # 
+    profit : float = 0.00
+    # 
+    shared : float = 0.00 
+
     #
     def calculate_totals(self):
-        CASH_START : float = 600.00
+        global CASH_START
+        
+        # 
+        credit_card_tax = self.credit_card * 0.03
+        # 
+        credit_card_net = self.credit_card - credit_card_tax
+        # 
+        total_sales = (credit_card_net + self.cash_end) - CASH_START
+
 
         # 
-        credit_card_tax : float = self.credit_card * 0.03
-        # 
-        credit_card_net : float = self.credit_card - credit_card_tax
-        # 
-        total_sales : float = (credit_card_net + self.cash_end) - CASH_START
-
-
-        # 
-        total_returned : float = (self.turkey_returned * self.turkey_price) + (self.ham_returned * self.ham_price) + (self.beef_returned * self.beef_price)
+        total_returned = (self.turkey_returned * self.turkey_price) + (self.ham_returned * self.ham_price) + (self.beef_returned * self.beef_price)
         # 
         gross = total_returned + total_sales
 
 
         # 
-        bread_total_cost : int = self.bread_purchased * 10
+        bread_total_cost = self.bread_purchased * 10
         # 
-        total_expenses : float = (self.turkey_purchased * self.turkey_price) + (self.ham_purchased * self.ham_price) + (self.beef_purchased * self.beef_price) + bread_total_cost
+        total_expenses = (self.turkey_purchased * self.turkey_price) + (self.ham_purchased * self.ham_price) + (self.beef_purchased * self.beef_price) + bread_total_cost
         # 
-        profit : float = gross - total_expenses
+        profit = gross - total_expenses
         # 
-        shared : float = profit / 2
+        shared = profit / 2
+
+        print(f"Cash start: {CASH_START}")
+        print(f"credot card tax: {credit_card_tax}")
+        print(f"credit card net: {credit_card_net}")
+        print(f"total sales: {total_sales}")
+        print(f"total returned: {total_returned}")
+        print(f"gross: {gross}")
+        print(f"bread total cost: {bread_total_cost}")
+        print(f"total expenses: {total_expenses}")
+        print(f"profit: {profit}")
+        print(f"shared: {shared}")
 
 
     # NTS -> probably will have to manually add the values...

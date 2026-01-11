@@ -29,6 +29,7 @@ def main_method():
 
     # send the responses to Event.py
     myvar = Event(*responses)
+    myvar.calculate_totals()
 
 
 
