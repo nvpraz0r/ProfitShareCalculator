@@ -51,14 +51,13 @@ class Event():
 
     #
     def calculate_totals(self):
-        global CASH_START
         
         # 
         credit_card_tax = self.credit_card * 0.03
         # 
         credit_card_net = self.credit_card - credit_card_tax
         # 
-        total_sales = (credit_card_net + self.cash_end) - CASH_START
+        total_sales = (credit_card_net + self.cash_end) - self.CASH_START
 
 
         # 
@@ -76,7 +75,7 @@ class Event():
         # 
         shared = profit / 2
 
-        print(f"Cash start: {CASH_START}")
+        print(f"Cash start: {self.CASH_START}")
         print(f"credot card tax: {credit_card_tax}")
         print(f"credit card net: {credit_card_net}")
         print(f"total sales: {total_sales}")

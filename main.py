@@ -20,12 +20,14 @@ from Event import *
 # yay global variables bad practices start now :D
 # responses array is where all the user input is stored
 # which will EVETUALLY be sent to Event
-responses = [] # this exists to be called from the main_method()
+responses = ["asdf","09/09/26",1234,1234,2,3,4,3.2,3.2,3.2,60,60,60,5]
 
 # main_method that calls all the other functions
 def main_method():
 
-    main_loop()
+    # reactivate this to resume user input
+    # spoofing input to make testing easier
+    # main_loop()
 
     # send the responses to Event.py
     myvar = Event(*responses)
