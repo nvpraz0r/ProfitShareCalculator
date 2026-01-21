@@ -24,15 +24,15 @@ responses = ["asdf","09/09/26",1234,1234,2,3,4,3.2,3.2,3.2,60,60,60,5]
 
 # main_method that calls all the other functions
 def main_method():
-
     # reactivate this to resume user input
     # spoofing input to make testing easier
     # main_loop()
 
     # send the responses to Event.py
     myvar = Event(*responses)
-    myvar.calculate_totals()
-
+    local_vars = myvar.calculate_totals()
+    print("PRINTING LOCAL VARIABLES")
+    print(local_vars)
 
 
 # unsure if this is how I want to handle the main loop 

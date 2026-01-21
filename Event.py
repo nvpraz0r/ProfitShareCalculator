@@ -23,45 +23,23 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
-    # class variables
-    CASH_START : float = 600.00
 
-    # 
-    credit_card_tax : float = 0.00
-    # 
-    credit_card_net : float = 0.00
-    # 
-    total_sales : float = 0.00
-
-
-    # 
-    total_returned : float = 0.00
-    # 
-    gross : float = 0.00
-
-
-    # 
-    bread_total_cost : float = 0.00
-    # 
-    total_expenses : float = 0.00
-    # 
-    profit : float = 0.00
-    # 
-    shared : float = 0.00 
-
-    #
     def calculate_totals(self):
+        #
+        CASH_START : float = 600.00
         
         # 
         credit_card_tax = self.credit_card * 0.03
         # 
         credit_card_net = self.credit_card - credit_card_tax
         # 
-        total_sales = (credit_card_net + self.cash_end) - self.CASH_START
+        total_sales = (credit_card_net + self.cash_end) - CASH_START
 
 
         # 
-        total_returned = (self.turkey_returned * self.turkey_price) + (self.ham_returned * self.ham_price) + (self.beef_returned * self.beef_price)
+        total_returned = ((self.turkey_returned * self.turkey_price) +
+                          (self.ham_returned * self.ham_price) +
+                          (self.beef_returned * self.beef_price))
         # 
         gross = total_returned + total_sales
 
@@ -69,14 +47,34 @@ class Event():
         # 
         bread_total_cost = self.bread_purchased * 10
         # 
-        total_expenses = (self.turkey_purchased * self.turkey_price) + (self.ham_purchased * self.ham_price) + (self.beef_purchased * self.beef_price) + bread_total_cost
+        total_expenses = ((self.turkey_purchased * self.turkey_price) +
+                          (self.ham_purchased * self.ham_price) +
+                          (self.beef_purchased * self.beef_price) +
+                          bread_total_cost)
         # 
         profit = gross - total_expenses
         # 
         shared = profit / 2
 
-        print(f"Cash start: {self.CASH_START}")
-        print(f"credot card tax: {credit_card_tax}")
+        # set order by hand to ensure variable order when creating dictionary
+
+        entity = self.entity
+        date = self.date
+        cash_end = self.cash_end
+        credit_card = self.credit_card
+        turkey_returned = self.turkey_returned
+        ham_returned = self.ham_returned
+        beef_returned = self.beef_returned
+        turkey_price = self.turkey_price
+        ham_price = self.ham_price
+        beef_price = self.beef_price
+        turkey_purchased = self.turkey_purchased
+        ham_purchased = self.ham_purchased
+        beef_purchased = self.beef_purchased
+        bread_purchased = self.bread_purchased
+
+        print(f"Cash start: {CASH_START}")
+        print(f"credit card tax: {credit_card_tax}")
         print(f"credit card net: {credit_card_net}")
         print(f"total sales: {total_sales}")
         print(f"total returned: {total_returned}")
@@ -86,38 +84,15 @@ class Event():
         print(f"profit: {profit}")
         print(f"shared: {shared}")
 
-
-    # NTS -> probably will have to manually add the values...
-    def generate_array(self):
-        """
-        This method populates the class_var_list with the class Event variables.
-        """
-        # class_var_list = [value for key, value in Event.__dict__.items() if not key.startswith('_') and not callable(value)]
-
-        class_var_arr = {}
-
-        for key, value, in vars(Event).items():
-            if not key.startswith('__'):
-                class_var_arr[key] = value
-                
-
-        print(class_var_arr)
+        return locals()
 
 
-    # This method generates the excel file with the help of generate_array() method
-    # "everything" is all the variables in this class
-    # need them on the excel sheet for transparency
+
+
     def generate_file(self, everything):
         # file name
         file_name : str = self.date + "_" + self.entity
         pass
-
-
-
-
-
-
-
 
 
     # # CODE GRAVEYARD
