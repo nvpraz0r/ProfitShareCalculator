@@ -25,6 +25,15 @@ class Event():
 
 
     def calculate_totals(self):
+        """
+        this method aggregates all the relevant data used to generate the profit share document
+
+        returns a dictionary of the local variables
+
+        :return: locals()
+        :rtype: dictionary
+        """
+
 
         # variable order
 
@@ -104,9 +113,14 @@ class Event():
         return locals()
 
 
-
-
     def generate_excel_file(self, everything):
+        """
+        this method creates an excel file based off the variables in calculate_totals()
+        :param everything:
+        :type everything:
+        :return:
+        :rtype:
+        """
         # file name
         file_name : str = self.date + "_" + self.entity
         pass
