@@ -25,53 +25,69 @@ class Event():
 
 
     def calculate_totals(self):
-        #
+
+        # variable order
+
+        # entity name
+        entity = self.entity
+        # date
+        date = self.date
+
+        # sales
+        # cash start
         CASH_START : float = 600.00
-        
-        # 
+        # cash end
+        cash_end = self.cash_end
+        # credit card
+        credit_card = self.credit_card
+        # credit card tax
         credit_card_tax = self.credit_card * 0.03
-        # 
+        # credit card net
         credit_card_net = self.credit_card - credit_card_tax
-        # 
+        # total sales
         total_sales = (credit_card_net + self.cash_end) - CASH_START
 
-
-        # 
+        # returned
+        # returned turkey
+        turkey_returned = self.turkey_returned
+        # returned ham
+        ham_returned = self.ham_returned
+        # returned beef
+        beef_returned = self.beef_returned
+        # turkey price
+        turkey_price = self.turkey_price
+        # ham price
+        ham_price = self.ham_price
+        # beef price
+        beef_price = self.beef_price
+        # total returned ( returned * price per pound )
         total_returned = ((self.turkey_returned * self.turkey_price) +
                           (self.ham_returned * self.ham_price) +
                           (self.beef_returned * self.beef_price))
-        # 
+        # gross ( total returned + total sales )
         gross = total_returned + total_sales
 
-
-        # 
+        # expenses
+        # turkey purchased
+        turkey_purchased = self.turkey_purchased
+        # ham purchased
+        ham_purchased = self.ham_purchased
+        # beef purchased
+        beef_purchased = self.beef_purchased
+        # bread purchased
+        bread_purchased = self.bread_purchased
+        # bread total cost ( bread purchased * 10 )
         bread_total_cost = self.bread_purchased * 10
-        # 
+        # total expenses ( purchased meat * meat price ) + bread total cost
         total_expenses = ((self.turkey_purchased * self.turkey_price) +
                           (self.ham_purchased * self.ham_price) +
                           (self.beef_purchased * self.beef_price) +
                           bread_total_cost)
-        # 
+        # profit ( gross - total expenses )
         profit = gross - total_expenses
-        # 
+        # shared profit ( profit / 2 )
         shared = profit / 2
 
-        # set order by hand to ensure variable order when creating dictionary
-
-        entity = self.entity
-        date = self.date
-        cash_end = self.cash_end
-        credit_card = self.credit_card
-        turkey_returned = self.turkey_returned
-        ham_returned = self.ham_returned
-        beef_returned = self.beef_returned
-        turkey_price = self.turkey_price
-        ham_price = self.ham_price
-        beef_price = self.beef_price
-        turkey_purchased = self.turkey_purchased
-        ham_purchased = self.ham_purchased
-        beef_purchased = self.beef_purchased
-        bread_purchased = self.bread_purchased
 
         print(f"Cash start: {CASH_START}")
         print(f"credit card tax: {credit_card_tax}")
@@ -84,12 +100,13 @@ class Event():
         print(f"profit: {profit}")
         print(f"shared: {shared}")
 
+
         return locals()
 
 
 
 
-    def generate_file(self, everything):
+    def generate_excel_file(self, everything):
         # file name
         file_name : str = self.date + "_" + self.entity
         pass

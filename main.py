@@ -10,7 +10,7 @@ from Event import *
 #   - fix the prompts to reflect proper user prompts ✅
 #   - hook up inputs to Event ✅
 # 
-#   - dummy up responses so I don't have to manually enter 14 variables when testing
+#   - dummy up responses so I don't have to manually enter 14 variables when testing ✅
 #   - finish up calculate_totals()
 #   - 
 # 
@@ -35,7 +35,7 @@ def main_method():
     print(local_vars)
 
 
-# unsure if this is how I want to handle the main loop 
+#
 def main_loop():
     """
     Docstring for main_loop
@@ -176,5 +176,5 @@ def clear_screen():
 
 
 # generate the file
-def generate_excel_file():
+def generate_file():
     pass
