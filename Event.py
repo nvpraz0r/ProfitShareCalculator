@@ -98,32 +98,32 @@ class Event():
         shared = profit / 2
 
 
-        print(f"Cash start: {CASH_START}")
-        print(f"credit card tax: {credit_card_tax}")
-        print(f"credit card net: {credit_card_net}")
-        print(f"total sales: {total_sales}")
-        print(f"total returned: {total_returned}")
-        print(f"gross: {gross}")
-        print(f"bread total cost: {bread_total_cost}")
-        print(f"total expenses: {total_expenses}")
-        print(f"profit: {profit}")
-        print(f"shared: {shared}")
+        # print(f"Cash start: {CASH_START}")
+        # print(f"credit card tax: {credit_card_tax}")
+        # print(f"credit card net: {credit_card_net}")
+        # print(f"total sales: {total_sales}")
+        # print(f"total returned: {total_returned}")
+        # print(f"gross: {gross}")
+        # print(f"bread total cost: {bread_total_cost}")
+        # print(f"total expenses: {total_expenses}")
+        # print(f"profit: {profit}")
+        # print(f"shared: {shared}")
 
 
         return locals()
 
 
-    def generate_excel_file(self, everything):
+    def generate_excel_file(self, expenses):
         """
-        this method creates an excel file based off the variables in calculate_totals()
-        :param everything:
-        :type everything:
-        :return:
-        :rtype:
+        This method creates an excel file based off the variables returned from calculate_totals()
+        
+        :param self: Event class object
+        :param expenses: array containing 24 variables of mixed data - should be in order
         """
+
+
         # file name
         file_name : str = self.date + "_" + self.entity
-        pass
 
 
     # # CODE GRAVEYARD

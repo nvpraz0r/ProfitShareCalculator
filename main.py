@@ -20,7 +20,7 @@ from Event import *
 # yay global variables bad practices start now :D
 # responses array is where all the user input is stored
 # which will EVETUALLY be sent to Event
-responses = ["asdf","09/09/26",1234,1234,2,3,4,3.2,3.2,3.2,60,60,60,5]
+responses = ["asdf","09/09/26",1234,1,2,3,4,5,6,7,8,9,10,11]
 
 # main_method that calls all the other functions
 def main_method():
@@ -33,6 +33,11 @@ def main_method():
     local_vars = myvar.calculate_totals()
     print("PRINTING LOCAL VARIABLES")
     print(local_vars)
+
+
+    # print key and value
+    for key, value in local_vars:
+        print(f"Key: {key}\t\t Value: {value}")
 
 
 #
