@@ -19,7 +19,7 @@ from Event import *
 
 # yay global variables bad practices start now :D
 # responses array is where all the user input is stored
-# which will EVETUALLY be sent to Event
+# which will EVENTUALLY be sent to Event
 responses = ["asdf","09/09/26",1234,1,2,3,4,5,6,7,8,9,10,11]
 
 # main_method that calls all the other functions
