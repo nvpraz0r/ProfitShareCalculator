@@ -11,16 +11,19 @@ from Event import *
 #   - hook up inputs to Event ✅
 # 
 #   - dummy up responses so I don't have to manually enter 14 variables when testing ✅
-#   - finish up calculate_totals()
-#   - 
+#   - finish up calculate_totals()✅
+#   - figure out how to print all the variables independently
+#   - import pandas
+#   - print all the data into an excel spreadsheet
 # 
 # 
 # 
 
 # yay global variables bad practices start now :D
 # responses array is where all the user input is stored
-# which will EVENTUALLY be sent to Event
-responses = ["asdf","09/09/26",1234,1,2,3,4,5,6,7,8,9,10,11]
+# which will EVENTUALLY be sent to Event class to be processed
+responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
+# responses = []
 
 # main_method that calls all the other functions
 def main_method():
