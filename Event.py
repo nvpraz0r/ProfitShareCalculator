@@ -112,6 +112,16 @@ class Event():
 
 
         return locals()
+    
+    # 
+    def print_totals(self, responses):
+        myvar = Event(*responses)
+        local_vars = myvar.calculate_totals()
+
+        print(local_vars)
+
+        # for k,v in 
+
 
 
     def generate_excel_file(self, expenses):

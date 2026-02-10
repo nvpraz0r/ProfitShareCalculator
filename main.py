@@ -11,8 +11,14 @@ from Event import *
 #   - hook up inputs to Event ✅
 # 
 #   - dummy up responses so I don't have to manually enter 14 variables when testing ✅
-#   - finish up calculate_totals()✅
-#   - figure out how to print all the variables independently
+#   - finish up calculate_totals() ✅
+#   - figure out how to print all the variables independently ✅
+#   - refactor Event class: use globals or don't, pick one
+#   - 
+#   - 
+#   - 
+# 
+#  
 #   - import pandas
 #   - print all the data into an excel spreadsheet
 # 
@@ -33,14 +39,16 @@ def main_method():
 
     # send the responses to Event.py
     myvar = Event(*responses)
-    local_vars = myvar.calculate_totals()
-    print("PRINTING LOCAL VARIABLES")
-    print(local_vars)
+    # local_vars = myvar.calculate_totals()
+    # print("PRINTING LOCAL VARIABLES")
+    # print(local_vars)
 
 
-    # print key and value
-    for key, value in local_vars:
-        print(f"Key: {key}\t\t Value: {value}")
+    # # print key and value
+    # for key, value in local_vars.items():
+    #     print(f"Key: {key}\t\t Value: {value}")
+
+    myvar.print_totals(responses)
 
 
 #
