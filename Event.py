@@ -2,6 +2,11 @@
 # import pandas
 
 
+# REFACTOR:
+#   - calculate_totals
+#       - have the variables store the data in the associated class variables so they can be accessed else where in the class
+
+
 class Event():
     def __init__(self,
                  entity, date, cash_end, credit_card,
@@ -24,7 +29,8 @@ class Event():
         self.beef_purchased = beef_purchased
         self.bread_purchased = bread_purchased
 
-
+    
+    # REFACTOR TO STORE CALCULATED TOTALS IN THE GLOBAL VARIABLES
     def calculate_totals(self):
         """
         this method aggregates all the relevant data used to generate the profit share document
