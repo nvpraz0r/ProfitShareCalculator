@@ -41,14 +41,7 @@ def main_method():
 
     # send the responses to Event.py
     myvar = Event(*responses)
-    local_vars = myvar.calculate_totals()
-    # print("PRINTING LOCAL VARIABLES")
-    # print(local_vars)
-
-
-    # # print key and value
-    for key, value in local_vars.items():
-        print(f"Key: {key}\t\t Value: {value}")
+    myvar.print_totals()
 
 
 
