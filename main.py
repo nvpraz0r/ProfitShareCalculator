@@ -16,12 +16,14 @@ from MyEvent import *
 # 
 # 
 # 
-#   - refactor Event class: use globals or don't, pick one
-#       - the problem right now is globals are available but not used
-#       - the infrastructure is there
+#   - refactor Event class: use globals or don't, pick one ✅
+#       - the problem right now is globals are available but not used ✅
+#       - the infrastructure is there ✅
 #   - Event class needs to be able to print the class variables
-#   - 
-# 
+#
+#
+#   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC
+#
 #  
 #   - import pandas
 #   - print all the data into an excel spreadsheet
@@ -29,8 +31,9 @@ from MyEvent import *
 # 
 # 
 
-
+# spoofed data
 responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
+# 
 # responses = []
 
 # main_method that calls all the other functions
@@ -39,9 +42,8 @@ def main_method():
     # spoofing input to make testing easier
     # main_loop()
 
-    # send the responses to Event.py
+    # send the responses to MyEvent.py
     myvar = MyEvent(*responses)
-    myvar.print_totals()
 
     # test retrieval of class attributes
     # vars() with an instance variable is the solution

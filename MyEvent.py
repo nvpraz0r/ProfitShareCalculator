@@ -69,13 +69,12 @@ class MyEvent:
         self.profit = self.gross - self.total_expenses
         # shared profit ( profit / 2 )
         self.shared = self.profit / 2
-
-
     
-    def print_totals(self):
-        print(f"{self.total_sales}")
-
-
+    
+    # 
+    def return_class_attributes(self):
+        attributes_dict_vars = vars(self)
+        return attributes_dict_vars
 
 
 
