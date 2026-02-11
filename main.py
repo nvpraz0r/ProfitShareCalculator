@@ -43,8 +43,15 @@ def main_method():
     myvar = MyEvent(*responses)
     myvar.print_totals()
 
+    # test retrieval of class attributes
+    # vars() with an instance variable is the solution
     attributes_dict_vars = vars(myvar)
     print(f"Using vars(): {attributes_dict_vars}")
+
+    # test printing all values
+    # items()
+    for k,v in attributes_dict_vars.items():
+        print(f"*{k}: {v}")
 
 
 
