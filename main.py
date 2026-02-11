@@ -43,6 +43,9 @@ def main_method():
     myvar = MyEvent(*responses)
     myvar.print_totals()
 
+    attributes_dict_vars = vars(myvar)
+    print(f"Using vars(): {attributes_dict_vars}")
+
 
 
 #

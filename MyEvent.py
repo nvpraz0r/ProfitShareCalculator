@@ -42,45 +42,38 @@ class MyEvent:
 
         # sales
         # cash start
-        CASH_START : float = 600.00
+        self.CASH_START : float = 600.00
         # credit card tax
-        credit_card_tax = self.credit_card * 0.03
+        self.credit_card_tax = self.credit_card * 0.03
         # credit card net
-        credit_card_net = self.credit_card - credit_card_tax
+        self.credit_card_net = self.credit_card - self.credit_card_tax
         # total sales
-        total_sales = (credit_card_net + self.cash_end) - CASH_START
+        self.total_sales = (self.credit_card_net + self.cash_end) - self.CASH_START
 
         # total returned ( returned * price per pound )
-        total_returned = ((self.turkey_returned * self.turkey_price) +
+        self.total_returned = ((self.turkey_returned * self.turkey_price) +
                           (self.ham_returned * self.ham_price) +
                           (self.beef_returned * self.beef_price))
         
         # gross ( total returned + total sales )
-        gross = total_returned + total_sales
+        self.gross = self.total_returned + self.total_sales
 
         # bread total cost ( bread purchased * 10 )
-        bread_total_cost = self.bread_purchased * 10
+        self.bread_total_cost = self.bread_purchased * 10
         # total expenses ( purchased meat * meat price ) + bread total cost
-        total_expenses = ((self.turkey_purchased * self.turkey_price) +
+        self.total_expenses = ((self.turkey_purchased * self.turkey_price) +
                           (self.ham_purchased * self.ham_price) +
                           (self.beef_purchased * self.beef_price) +
-                          bread_total_cost)
+                          self.bread_total_cost)
         # profit ( gross - total expenses )
-        profit = gross - total_expenses
+        self.profit = self.gross - self.total_expenses
         # shared profit ( profit / 2 )
-        shared = profit / 2
+        self.shared = self.profit / 2
+
 
     
-    class_vars = {
-        name: value
-        for name, value in MyEvent.__dict__.items()
-        if not name.startswith('__') and not callable(value)
-    }
-
-    
-    def print_totals(cls):
-        global class_vars
-        print(class_vars)
+    def print_totals(self):
+        print(f"{self.total_sales}")
 
 
 
