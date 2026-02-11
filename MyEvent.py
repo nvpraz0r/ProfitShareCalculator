@@ -5,9 +5,14 @@
 # REFACTOR:
 #   - calculate_totals
 #       - have the variables store the data in the associated class variables so they can be accessed else where in the class
+# 
+# 
+# Currently working on:
+#  - streamlining class variables into a singular data structure without hardcoding
+#  - returning that data structure from a method for reuse
 
 
-class Event():
+class MyEvent:
     def __init__(self,
                  entity, date, cash_end, credit_card,
                  turkey_returned, ham_returned, beef_returned,
@@ -66,14 +71,22 @@ class Event():
         shared = profit / 2
 
     
-    # 
-    def print_totals(self):
-        print(f"{self.entity}")
+    class_vars = {
+        name: value
+        for name, value in MyEvent.__dict__.items()
+        if not name.startswith('__') and not callable(value)
+    }
+
+    
+    def print_totals(cls):
+        global class_vars
+        print(class_vars)
 
 
 
 
-    def generate_excel_file(self, expenses):
+
+    def generate_excel_file(self):
         """
         This method creates an excel file based off the variables returned from calculate_totals()
         
@@ -83,7 +96,7 @@ class Event():
 
 
         # file name
-        file_name : str = self.date + "_" + self.entity
+        # file_name : str = self.date + "_" + self.entity
 
 
     # # CODE GRAVEYARD

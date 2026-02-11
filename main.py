@@ -1,6 +1,6 @@
 import os # used to clear terminal screen
 
-from Event import *
+from MyEvent import *
 
 # 
 # future plans:
@@ -40,7 +40,7 @@ def main_method():
     # main_loop()
 
     # send the responses to Event.py
-    myvar = Event(*responses)
+    myvar = MyEvent(*responses)
     myvar.print_totals()
 
 
