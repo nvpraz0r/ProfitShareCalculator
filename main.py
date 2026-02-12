@@ -1,6 +1,5 @@
-import os # used to clear terminal screen
-
 from MyEvent import *
+from Utils import *
 
 # 
 # future plans:
@@ -32,15 +31,15 @@ from MyEvent import *
 # 
 
 # spoofed data
-responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
+# responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
 # 
-# responses = []
+responses = []
 
 # main_method that calls all the other functions
 def main_method():
     # reactivate this to resume user input
     # spoofing input to make testing easier
-    # main_loop()
+    main_loop()
 
     # send the responses to MyEvent.py
     myvar = MyEvent(*responses)
@@ -62,6 +61,9 @@ def main_loop():
     """
     Docstring for main_loop
     """
+
+    utils = Utils()
+
     # placeholder for prompts
     # this currently exists as proof of concept
     # refactor prompts array to reflect proper prompts
@@ -91,14 +93,14 @@ def main_loop():
     # 
     while running:
         # display program title
-        intro_to_application()
+        utils.intro_to_application
 
         # loop through prompts
         for prompt in prompts:
             # get_validation_method calls input_validation_float or input_validation_string
             # gvm calls ivf or ivs due to prompt[1]'s designation - which is a hardcoded happy path shot caller
             # ivf or ivs returns their respective data type which is stored in "value" - user input
-            value = get_validation_method(prompt[0],prompt[1]) # refactor this please - too many nested functions
+            value = utils.get_validation_method(prompt[0],prompt[1]) # refactor this please - too many nested functions
             # add value - user input - into responses array
             responses.append(value)
 
@@ -106,97 +108,6 @@ def main_loop():
         running = False
 
 
-# helper method that directs the flow
-# of which method should be used to
-# validate user input
-#
-# switch case
-# 1 = float
-# 2 = string
-def get_validation_method(prompt, prompt_data_type):    
-    """
-    Docstring for get_validation_method
-    
-    :param prompt: Description
-    :param prompt_data_type: Description
-    """    
-    # switch case
-    # 1 = float
-    # 2 = string
-    match prompt_data_type:
-        case 1:
-            # float
-            return input_validation_float(prompt)
-        case 2:
-            # string
-            return input_validation_string(prompt)
-        case _:
-            print("Error occurred somewhere during the validation process.")
-
-
-# check if input is a valid float
-def input_validation_float(prompt):
-    """
-    Docstring for input_validation_float
-    
-    :param prompt: Description
-    """
-    while True:
-        try:
-            result : float = float(input(f"Please enter the {prompt}.\n"))
-            print(result)
-            return result
-        except ValueError:
-            print("Invalid input. Please enter the correct information.")
-            # wait for 2 seconds
-            # clear screen
-            # print menu
-
-
-# check if input is a valid string
-def input_validation_string(prompt):
-    """
-    Docstring for input_validation_string
-    
-    :param prompt: Description
-    """
-    while True:
-        try:
-            result : str = str(input(f"Please enter the {prompt}.\n"))
-            print(result)
-            return result
-        except ValueError:
-            print("Invalid input. Please enter the correct information.")
-            # wait for 2 seconds
-            # clear screen
-            # print menu
-
-
-# display intro header
-def intro_to_application():
-    print("         Profit Share Calculator")
-    print("+-----------------------------------------+")
-    print("|                                         |")
-    print("| This Program is designed to generate    |")
-    print("| an excel spreadsheet.                   |")
-    print("|                                         |")
-    print("+-----------------------------------------+")
-    print()
-
-
-# clear the screen
-def clear_screen():
-    """
-    Docstring for clear_screen
-    """
-    # For windows
-    if os.name == 'nt':
-        _ = os.system('cls')
-    # For mac and linux (bash systems)
-    else:
-        _ = os.system('clear')
-
-
-# generate the file
-def generate_file():
+# 
+def generate_excel_file():
     pass

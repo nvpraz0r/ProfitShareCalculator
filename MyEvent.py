@@ -1,17 +1,3 @@
-# eventually will use pandas to create excel file
-# import pandas
-
-
-# REFACTOR:
-#   - calculate_totals
-#       - have the variables store the data in the associated class variables so they can be accessed else where in the class
-# 
-# 
-# Currently working on:
-#  - streamlining class variables into a singular data structure without hardcoding
-#  - returning that data structure from a method for reuse
-
-
 class MyEvent:
     def __init__(self,
                  entity, date, cash_end, credit_card,
@@ -69,26 +55,6 @@ class MyEvent:
         self.profit = self.gross - self.total_expenses
         # shared profit ( profit / 2 )
         self.shared = self.profit / 2
-    
-    
-    # 
-    def return_class_attributes(self):
-        attributes_dict_vars = vars(self)
-        return attributes_dict_vars
-
-
-
-    def generate_excel_file(self):
-        """
-        This method creates an excel file based off the variables returned from calculate_totals()
-        
-        :param self: Event class object
-        :param expenses: array containing 24 variables of mixed data - should be in order
-        """
-
-
-        # file name
-        # file_name : str = self.date + "_" + self.entity
 
 
     # # CODE GRAVEYARD
