@@ -1,3 +1,5 @@
+import pandas as pd
+# from openpyxl.workbook import Workbook
 from MyEvent import *
 from Utils import *
 
@@ -31,15 +33,15 @@ from Utils import *
 # 
 
 # spoofed data
-# responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
+responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
 # 
-responses = []
+# responses = []
 
 # main_method that calls all the other functions
 def main_method():
     # reactivate this to resume user input
     # spoofing input to make testing easier
-    main_loop()
+    # main_loop()
 
     # send the responses to MyEvent.py
     myvar = MyEvent(*responses)
@@ -54,6 +56,7 @@ def main_method():
     for k,v in attributes_dict_vars.items():
         print(f"*{k}: {v}")
 
+    TEST_PANDAS()
 
 
 #
@@ -109,5 +112,17 @@ def main_loop():
 
 
 # 
-def generate_excel_file():
+def generate_excel_file(attributes):
+    # print attributes into excel file
     pass
+
+# 
+def TEST_PANDAS():
+    dict = {
+        "test123" : 123,
+        "test456" : 456
+    }
+
+    df = pd.DataFrame.from_dict(dict, orient='index').transpose()
+
+    df.to_excel("TestFile.xlsx", index=False)
