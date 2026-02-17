@@ -1,5 +1,4 @@
 import pandas as pd
-# from openpyxl.workbook import Workbook
 from MyEvent import *
 from Utils import *
 
@@ -15,20 +14,14 @@ from Utils import *
 #   - finish up calculate_totals() ✅
 #   - figure out how to print all the variables independently ✅
 # 
-# 
-# 
 #   - refactor Event class: use globals or don't, pick one ✅
 #       - the problem right now is globals are available but not used ✅
 #       - the infrastructure is there ✅
-#   - Event class needs to be able to print the class variables
 #
-#
-#   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC
-#
-#  
-#   - import pandas
-#   - print all the data into an excel spreadsheet
+#   - import pandas ✅
+#   - print all the data into an excel spreadsheet ✅
 # 
+#   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC
 # 
 # 
 
@@ -56,7 +49,11 @@ def main_method():
     for k,v in attributes_dict_vars.items():
         print(f"*{k}: {v}")
 
-    TEST_PANDAS()
+
+    try:
+        TEST_PANDAS()
+    except Exception as e:
+        print(f"An error occurred while creating the excel file: '{e}'")
 
 
 #
@@ -116,13 +113,20 @@ def generate_excel_file(attributes):
     # print attributes into excel file
     pass
 
-# 
+
+
+
+# WORKING ON THIS FUNCTION
 def TEST_PANDAS():
     dict = {
         "test123" : 123,
         "test456" : 456
     }
 
-    df = pd.DataFrame.from_dict(dict, orient='index').transpose()
+    # df = pd.DataFrame.from_dict(dict, orient='index').transpose()
+    # df.to_excel("TestFile.xlsx", index=False)
 
-    df.to_excel("TestFile.xlsx", index=False)
+    df = pd.DataFrame([dict]).transpose()
+    df.index.name = ''
+
+    df.to_excel("TestFile.xlsx")
