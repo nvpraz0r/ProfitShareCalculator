@@ -117,16 +117,20 @@ def generate_excel_file(attributes):
 
 
 # WORKING ON THIS FUNCTION
+    # df = pd.DataFrame.from_dict(dict, orient='index').transpose()
+    # df.to_excel("TestFile.xlsx", index=False)
 def TEST_PANDAS():
-    dict = {
+    # df = pd.DataFrame([data]).transpose()
+    # df.index.name = 'asdf'
+    # df.to_excel("TestFile.xlsx")
+
+    file_path = "TestFile.xlsx"
+
+    data = {
         "test123" : 123,
         "test456" : 456
     }
 
-    # df = pd.DataFrame.from_dict(dict, orient='index').transpose()
-    # df.to_excel("TestFile.xlsx", index=False)
-
-    df = pd.DataFrame([dict]).transpose()
-    df.index.name = ''
-
-    df.to_excel("TestFile.xlsx")
+    df = pd.DataFrame.from_dict(data, orient='index', columns=['Date Of Event'])
+    df.index.name = 'Entity'
+    df.to_excel(file_path)
