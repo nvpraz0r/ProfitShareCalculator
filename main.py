@@ -9,17 +9,17 @@ from Utils import *
 # to do:
 #   - fix the prompts to reflect proper user prompts ✅
 #   - hook up inputs to Event ✅
-# 
 #   - dummy up responses so I don't have to manually enter 14 variables when testing ✅
 #   - finish up calculate_totals() ✅
 #   - figure out how to print all the variables independently ✅
-# 
 #   - refactor Event class: use globals or don't, pick one ✅
 #       - the problem right now is globals are available but not used ✅
 #       - the infrastructure is there ✅
-#
 #   - import pandas ✅
 #   - print all the data into an excel spreadsheet ✅
+# 
+# 
+#   - Rearrange the variable order to reflect format of previous profit share reports
 # 
 #   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC
 # 
@@ -51,7 +51,7 @@ def main_method():
 
 
     try:
-        TEST_PANDAS()
+        TEST_PANDAS(attributes_dict_vars)
     except Exception as e:
         print(f"An error occurred while creating the excel file: '{e}'")
 
@@ -108,29 +108,19 @@ def main_loop():
         running = False
 
 
-# 
-def generate_excel_file(attributes):
-    # print attributes into excel file
-    pass
-
-
-
-
 # WORKING ON THIS FUNCTION
-    # df = pd.DataFrame.from_dict(dict, orient='index').transpose()
-    # df.to_excel("TestFile.xlsx", index=False)
-def TEST_PANDAS():
+def TEST_PANDAS(attributes_dict_vars):
+    # data = {
+    #     "test123" : 123,
+    #     "test456" : 456
+    # }
     # df = pd.DataFrame([data]).transpose()
     # df.index.name = 'asdf'
     # df.to_excel("TestFile.xlsx")
 
     file_path = "TestFile.xlsx"
 
-    data = {
-        "test123" : 123,
-        "test456" : 456
-    }
-
-    df = pd.DataFrame.from_dict(data, orient='index', columns=['Date Of Event'])
-    df.index.name = 'Entity'
+    # change variable column before packaging the program for use
+    df = pd.DataFrame.from_dict(attributes_dict_vars, orient='index', columns=['AML'])
+    df.index.name = 'Profit Share Report'
     df.to_excel(file_path)
