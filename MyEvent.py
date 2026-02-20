@@ -9,52 +9,67 @@ class MyEvent:
         # user input
         self.entity = entity
         self.date = date
-        self.cash_end = cash_end
-        self.credit_card = credit_card
 
+        # amount of cash in the bank before and after the event
+        self.CASH_START : float = 600.00
+        self.cash_end = cash_end
+
+        # credit card sales
+        self.credit_card = credit_card
+        # credit card tax - we take three percent to cover CC fees
+        self.credit_card_tax = self.credit_card * 0.03
+        # credit card net
+        self.credit_card_net = self.credit_card - self.credit_card_tax
+        
+        # total amount of money generated BEFORE all things considered
+        self.total_sales = (self.credit_card_net + self.cash_end) - self.CASH_START
+
+        # amount of meat RETURNED
         self.turkey_returned = turkey_returned
         self.ham_returned = ham_returned
         self.beef_returned = beef_returned
 
+        # PRICE of meat purchased
         self.turkey_price = turkey_price
         self.ham_price = ham_price
         self.beef_price = beef_price
 
+        # AMOUNT of meat purchased
         self.turkey_purchased = turkey_purchased
         self.ham_purchased = ham_purchased
         self.beef_purchased = beef_purchased
 
+        # AMOUNT of bread purchased
         self.bread_purchased = bread_purchased
 
-        # sales
-        # cash start
-        self.CASH_START : float = 600.00
-        # credit card tax
-        self.credit_card_tax = self.credit_card * 0.03
-        # credit card net
-        self.credit_card_net = self.credit_card - self.credit_card_tax
-        # total sales
-        self.total_sales = (self.credit_card_net + self.cash_end) - self.CASH_START
-
+        # bread total cost ( bread purchased * 10 )
+        self.bread_total_cost = self.bread_purchased * 10.00
+        
+        # total cost of meat RETURNED
         # total returned ( returned * price per pound )
         self.total_returned = ((self.turkey_returned * self.turkey_price) +
                           (self.ham_returned * self.ham_price) +
                           (self.beef_returned * self.beef_price))
         
+        # total cost of 
         # gross ( total returned + total sales )
         self.gross = self.total_returned + self.total_sales
 
-        # bread total cost ( bread purchased * 10 )
-        self.bread_total_cost = self.bread_purchased * 10
         # total expenses ( purchased meat * meat price ) + bread total cost
         self.total_expenses = ((self.turkey_purchased * self.turkey_price) +
                           (self.ham_purchased * self.ham_price) +
                           (self.beef_purchased * self.beef_price) +
                           self.bread_total_cost)
+        
         # profit ( gross - total expenses )
         self.profit = self.gross - self.total_expenses
+
         # shared profit ( profit / 2 )
         self.shared = self.profit / 2
+
+
+
+
 
 
     # # CODE GRAVEYARD

@@ -19,7 +19,7 @@ from Utils import *
 #   - print all the data into an excel spreadsheet ✅
 # 
 # 
-#   - Rearrange the variable order to reflect format of previous profit share reports
+#   - Rearrange the variable order to reflect format of previous profit share reports ✅
 # 
 #   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC
 # 
