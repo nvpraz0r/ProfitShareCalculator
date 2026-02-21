@@ -1,5 +1,5 @@
 import pandas as pd
-from MyEvent import *
+from Event import *
 from Utils import *
 
 # 
@@ -37,7 +37,7 @@ def main_method():
     # main_loop()
 
     # send the responses to MyEvent.py
-    myvar = MyEvent(*responses)
+    myvar = Event(*responses)
 
     # test retrieval of class attributes
     # vars() with an instance variable is the solution

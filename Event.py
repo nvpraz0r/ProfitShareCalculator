@@ -1,4 +1,4 @@
-class MyEvent:
+class Event:
     def __init__(self,
                  entity, date, cash_end, credit_card,
                  turkey_returned, ham_returned, beef_returned,
