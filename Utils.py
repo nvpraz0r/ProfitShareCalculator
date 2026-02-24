@@ -14,6 +14,46 @@ class Utils:
             _ = os.system('clear')
 
 
+    # check if input is a valid float
+    # @staticmethod
+    def input_validation_float(prompt):
+        """
+        Docstring for input_validation_float
+        
+        :param prompt: Description
+        """
+        while True:
+            try:
+                result : float = float(input(f"Please enter the {prompt}.\n"))
+                print(result)
+                return result
+            except ValueError:
+                print("Invalid input. Please enter the correct information.")
+                # wait for 2 seconds
+                # clear screen
+                # print menu
+
+
+    # check if input is a valid string
+    # @staticmethod
+    def input_validation_string(prompt):
+        """
+        Docstring for input_validation_string
+        
+        :param prompt: Description
+        """
+        while True:
+            try:
+                result : str = str(input(f"Please enter the {prompt}.\n"))
+                print(result)
+                return result
+            except ValueError:
+                print("Invalid input. Please enter the correct information.")
+                # wait for 2 seconds
+                # clear screen
+                # print menu
+
+
     # helper method that directs the flow
     # of which method should be used to
     # validate user input
@@ -34,50 +74,12 @@ class Utils:
         match prompt_data_type:
             case 1:
                 # float
-                return input_validation_float(prompt)
+                return Utils.input_validation_float(prompt)
             case 2:
                 # string
-                return input_validation_string(prompt)
+                return Utils.input_validation_string(prompt)
             case _:
                 print("Error occurred somewhere during the validation process.")
-
-
-    # check if input is a valid float
-    def input_validation_float(prompt):
-        """
-        Docstring for input_validation_float
-        
-        :param prompt: Description
-        """
-        while True:
-            try:
-                result : float = float(input(f"Please enter the {prompt}.\n"))
-                print(result)
-                return result
-            except ValueError:
-                print("Invalid input. Please enter the correct information.")
-                # wait for 2 seconds
-                # clear screen
-                # print menu
-
-
-    # check if input is a valid string
-    def input_validation_string(prompt):
-        """
-        Docstring for input_validation_string
-        
-        :param prompt: Description
-        """
-        while True:
-            try:
-                result : str = str(input(f"Please enter the {prompt}.\n"))
-                print(result)
-                return result
-            except ValueError:
-                print("Invalid input. Please enter the correct information.")
-                # wait for 2 seconds
-                # clear screen
-                # print menu
 
 
     # display intro header
