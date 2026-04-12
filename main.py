@@ -27,9 +27,25 @@ from Utils import *
 #   TESTING GIT SYNC
 
 # spoofed data
-responses = ["asdf","09/09/26",1234,300,2,3,4,5,6,7,8,9,10,11]
-# 
-# responses = []
+responses = [
+             "Scouts",
+             "09/09/26",
+             1166.54,
+             213.46,
+             0,
+             0,
+             0,
+             5.59,
+             1.99,
+             4.25,
+             8,
+             12,
+             36,
+             4
+]
+# entity, date, cash_end, credit_card,turkey_returned,
+# ham_returned, beef_returned,turkey_price, ham_price,
+# beef_price,turkey_purchased, ham_purchased, beef_purchased,bread_purchased
 
 # main_method that calls all the other functions
 def main_method():
