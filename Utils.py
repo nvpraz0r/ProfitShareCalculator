@@ -61,7 +61,7 @@ class Utils:
     # switch case
     # 1 = float
     # 2 = string
-    def get_validation_method(prompt, prompt_data_type):    
+    def get_validation_method(self, prompt, prompt_data_type):
         """
         Docstring for get_validation_method
         
@@ -83,7 +83,7 @@ class Utils:
 
 
     # display intro header
-    def intro_to_application():
+    def intro_to_application(self):
         print("         Profit Share Calculator")
         print("+-----------------------------------------+")
         print("|                                         |")

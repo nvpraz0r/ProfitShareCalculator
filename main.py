@@ -27,22 +27,25 @@ from Utils import *
 #   TESTING GIT SYNC
 
 # spoofed data
-responses = [
-             "Scouts",
-             "09/09/26",
-             1166.54,
-             213.46,
-             0,
-             0,
-             0,
-             5.59,
-             1.99,
-             4.25,
-             8,
-             12,
-             36,
-             4
-]
+# responses = [
+#              "Scouts",
+#              "09/09/26",
+#              1166.54,
+#              213.46,
+#              0,
+#              0,
+#              0,
+#              5.59,
+#              1.99,
+#              4.25,
+#              8,
+#              12,
+#              36,
+#              4
+# ]
+
+responses = []
+
 # entity, date, cash_end, credit_card,turkey_returned,
 # ham_returned, beef_returned,turkey_price, ham_price,
 # beef_price,turkey_purchased, ham_purchased, beef_purchased,bread_purchased
@@ -51,7 +54,7 @@ responses = [
 def main_method():
     # reactivate this to resume user input
     # spoofing input to make testing easier
-    # main_loop()
+    main_loop()
 
     # send the responses to MyEvent.py
     myvar = Event(*responses)
@@ -110,7 +113,7 @@ def main_loop():
     # 
     while running:
         # display program title
-        utils.intro_to_application
+        utils.intro_to_application()
 
         # loop through prompts
         for prompt in prompts:
