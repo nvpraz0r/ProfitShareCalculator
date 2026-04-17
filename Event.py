@@ -5,29 +5,7 @@ class Event:
                  turkey_price, ham_price, beef_price,
                  turkey_purchased, ham_purchased, beef_purchased,
                  bread_purchased):
-        """
-        :param entity:
-        :param date:
-
-        :param cash_end:
-        :param credit_card:
-
-        :param turkey_returned:
-        :param ham_returned:
-        :param beef_returned:
-
-        :param turkey_price:
-        :param ham_price:
-        :param beef_price:
-
-        :param turkey_purchased:
-        :param ham_purchased:
-        :param beef_purchased:
-
-        :param bread_purchased:
-        """
-
-
+        
         # user input
         self.entity = entity
         self.date = date

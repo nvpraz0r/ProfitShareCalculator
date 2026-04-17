@@ -1,11 +1,7 @@
-import pandas as pd
-from Event import *
-from Utils import *
-
-# 
+#
 # future plans:
 #   - use tkinter to incorporate a GUI
-# 
+#
 # to do:
 #   - fix the prompts to reflect proper user prompts ✅
 #   - hook up inputs to Event ✅
@@ -17,14 +13,23 @@ from Utils import *
 #       - the infrastructure is there ✅
 #   - import pandas ✅
 #   - print all the data into an excel spreadsheet ✅
-# 
-# 
 #   - Rearrange the variable order to reflect format of previous profit share reports ✅
-# 
-#   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC
-# 
-# 
-#   TESTING GIT SYNC
+#   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC ❌❌❌
+#       - test with real data was incorrect possibly due to use of float
+#
+#   - Refactor data types from float to int
+#       - divide data by 100 to achieve dollar and cent amount without floating point errors
+#
+#   - Refactor::
+#       - clean up code base:
+#           - cull unnecessary comments
+#           - clean up functions and methods
+#           - clean up files
+#           - Add how to use in README doc and in comments
+
+import pandas as pd
+from Event import *
+from Utils import *
 
 # spoofed data
 # responses = [
@@ -52,8 +57,7 @@ responses = []
 
 # main_method that calls all the other functions
 def main_method():
-    # reactivate this to resume user input
-    # spoofing input to make testing easier
+    # 
     main_loop()
 
     # send the responses to MyEvent.py
@@ -79,7 +83,9 @@ def main_method():
 #
 def main_loop():
     """
-    Docstring for main_loop
+    Docstring for main loop
+    :return:
+    :rtype:
     """
 
     utils = Utils()
