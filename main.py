@@ -31,7 +31,6 @@ import pandas as pd
 from Event import *
 from Utils import *
 
-# spoofed data
 # responses = [
 #              "Scouts",
 #              "09/09/26",
