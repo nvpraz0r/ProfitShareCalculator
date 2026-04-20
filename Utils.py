@@ -7,16 +7,11 @@ class Utils:
         """
         Docstring for clear_screen
         """
-        # For windows
-        if os.name == 'nt':
-            _ = os.system('cls')
-        # For mac and linux (bash systems)
-        else:
-            _ = os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 
     # check if input is a valid float
-    def input_validation_float(prompt):
+    def input_validation_int(prompt):
         """
         Docstring for input_validation_float
         
@@ -30,7 +25,7 @@ class Utils:
                 print("Invalid input. Please enter the correct information.")
                 # wait for 2 seconds
                 time.sleep(2)
-                # clear_console()
+                Utils.clear_console()
 
 
     # check if input is a valid string
@@ -50,7 +45,8 @@ class Utils:
                 print("Invalid input. Please enter the correct information.")
                 # wait for 2 seconds
                 time.sleep(2)
-                # clear_console()
+                Utils.clear_console()
+
 
 
     def get_validation_method(self, prompt, prompt_data_type):
@@ -67,7 +63,7 @@ class Utils:
         match prompt_data_type:
             case 1:
                 # int
-                return Utils.input_validation_float(prompt)
+                return Utils.input_validation_int(prompt)
             case 2:
                 # string
                 return Utils.input_validation_string(prompt)
