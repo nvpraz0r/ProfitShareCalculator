@@ -1,8 +1,9 @@
 import os # used to clear terminal screen
+import time
 
 class Utils:
     # clear the screen
-    def clear_screen():
+    def clear_console():
         """
         Docstring for clear_screen
         """
@@ -15,7 +16,6 @@ class Utils:
 
 
     # check if input is a valid float
-    # @staticmethod
     def input_validation_float(prompt):
         """
         Docstring for input_validation_float
@@ -24,18 +24,16 @@ class Utils:
         """
         while True:
             try:
-                result : float = float(input(f"Please enter the {prompt}.\n"))
-                print(result)
+                result = int(input(f"Please enter the {prompt}.\n"))
                 return result
             except ValueError:
                 print("Invalid input. Please enter the correct information.")
                 # wait for 2 seconds
-                # clear screen
-                # print menu
+                time.sleep(2)
+                # clear_console()
 
 
     # check if input is a valid string
-    # @staticmethod
     def input_validation_string(prompt):
         """
         Docstring for input_validation_string
@@ -44,42 +42,38 @@ class Utils:
         """
         while True:
             try:
-                result : str = str(input(f"Please enter the {prompt}.\n"))
-                print(result)
+                result = input(f"Please enter the {prompt}:\n")
+                if not result.isalpha():
+                    raise ValueError
                 return result
             except ValueError:
                 print("Invalid input. Please enter the correct information.")
                 # wait for 2 seconds
-                # clear screen
-                # print menu
+                time.sleep(2)
+                # clear_console()
 
 
-    # helper method that directs the flow
-    # of which method should be used to
-    # validate user input
-    #
-    # switch case
-    # 1 = float
-    # 2 = string
     def get_validation_method(self, prompt, prompt_data_type):
         """
-        Docstring for get_validation_method
+        Docstring for get_validation_method:
+        helper method that directs the flow of which method should be used to get user input. 1 for int, 2 for string
         
         :param prompt: Description
         :param prompt_data_type: Description
         """    
         # switch case
-        # 1 = float
+        # 1 = int
         # 2 = string
         match prompt_data_type:
             case 1:
-                # float
+                # int
                 return Utils.input_validation_float(prompt)
             case 2:
                 # string
                 return Utils.input_validation_string(prompt)
             case _:
                 print("Error occurred somewhere during the validation process.")
+                return None
 
 
     # display intro header

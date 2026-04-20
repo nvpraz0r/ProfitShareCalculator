@@ -49,6 +49,7 @@ from Utils import *
 #              4
 # ]
 
+
 responses = []
 
 # entity, date, cash_end, credit_card,turkey_returned,
@@ -88,11 +89,14 @@ def main_loop():
     :rtype:
     """
 
+    # Utils class reference
     utils = Utils()
 
-    # placeholder for prompts
-    # this currently exists as proof of concept
-    # refactor prompts array to reflect proper prompts
+
+    # "Please enter the {prompt}"
+    # switch case
+    # 1 = int
+    # 2 = string
     prompts = [
         ("entities' name",2),
         ("date of the event",2),
@@ -109,10 +113,7 @@ def main_loop():
         ("amount of Beef purchased (in pounds)",1),
         ("amount of Bread purchased",1)
     ]
-    # "Please enter the {prompt}"
-    # switch case
-    # 1 = float
-    # 2 = string
+
 
     #
     running : bool = True
@@ -136,14 +137,13 @@ def main_loop():
 
 # WORKING ON THIS FUNCTION
 def TEST_PANDAS(attributes_dict_vars):
-    # data = {
-    #     "test123" : 123,
-    #     "test456" : 456
-    # }
-    # df = pd.DataFrame([data]).transpose()
-    # df.index.name = 'asdf'
-    # df.to_excel("TestFile.xlsx")
+    """
 
+    :param attributes_dict_vars:
+    :type attributes_dict_vars:
+    """
+
+    # create path and file name
     file_path = "TestFile.xlsx"
 
     # change variable column before packaging the program for use
