@@ -3,8 +3,8 @@
 #import modules
 from main import *
 
-def main():
-    main_method()
+def test():
+    main()
 
 if __name__ == '__main__':
-    main()
+    test()

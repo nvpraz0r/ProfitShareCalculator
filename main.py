@@ -31,6 +31,10 @@ import pandas as pd
 from Event import *
 from Utils import *
 
+
+# entity, date, cash_end, credit_card,turkey_returned,
+# ham_returned, beef_returned,turkey_price, ham_price,
+# beef_price,turkey_purchased, ham_purchased, beef_purchased,bread_purchased
 # responses = [
 #              "Scouts",
 #              "09/09/26",
@@ -51,14 +55,10 @@ from Utils import *
 
 responses = []
 
-# entity, date, cash_end, credit_card,turkey_returned,
-# ham_returned, beef_returned,turkey_price, ham_price,
-# beef_price,turkey_purchased, ham_purchased, beef_purchased,bread_purchased
-
-# main_method that calls all the other functions
-def main_method():
+def main():
+    """ Main method that calls all other functions """
     # 
-    main_loop()
+    get_user_responses()
 
     # send the responses to MyEvent.py
     myvar = Event(*responses)
@@ -70,18 +70,18 @@ def main_method():
 
     # test printing all values
     # items()
-    for k,v in attributes_dict_vars.items():
-        print(f"*{k}: {v}")
+    for key, value in attributes_dict_vars.items():
+        print(f"*{key}: {value}")
 
-
-    try:
-        TEST_PANDAS(attributes_dict_vars)
-    except Exception as e:
-        print(f"An error occurred while creating the excel file: '{e}'")
+    # works, just don't need it to work right now
+    # try:
+    #     TEST_PANDAS(attributes_dict_vars)
+    # except Exception as e:
+    #     print(f"An error occurred while creating the excel file: '{e}'")
 
 
 #
-def main_loop():
+def get_user_responses():
     """
     Docstring for main loop
     :return:
@@ -134,13 +134,8 @@ def main_loop():
         running = False
 
 
-# WORKING ON THIS FUNCTION
 def TEST_PANDAS(attributes_dict_vars):
-    """
-
-    :param attributes_dict_vars:
-    :type attributes_dict_vars:
-    """
+    """ This function takes all the attributes from Event class and puts it into an .xlsx file """
 
     # create path and file name
     file_path = "TestFile.xlsx"

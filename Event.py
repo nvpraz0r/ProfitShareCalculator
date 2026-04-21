@@ -11,13 +11,14 @@ class Event:
         self.date = date
 
         # amount of cash in the bank before and after the event
-        self.CASH_START : int = 600
+        self.CASH_START = 600
         self.cash_end = cash_end
 
         # credit card sales
         self.credit_card = credit_card
         # credit card tax - we take three percent to cover CC fees
-        self.credit_card_tax = (self.credit_card * 3) / 100
+        # self.credit_card_tax = (self.credit_card * 3) / 100
+        self.credit_card_tax = self.credit_card * 3
         # credit card net
         self.credit_card_net = self.credit_card - self.credit_card_tax
         
@@ -65,4 +66,4 @@ class Event:
         self.profit = self.gross - self.total_expenses
 
         # shared profit ( profit / 2 )
-        self.shared = self.profit / 2
+        self.shared: int = self.profit / 2
