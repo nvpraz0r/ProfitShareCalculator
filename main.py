@@ -27,7 +27,6 @@
 #           - clean up files
 #           - Add how to use in README doc and in comments
 
-import pandas as pd
 from Event import *
 from Utils import *
 
@@ -82,11 +81,7 @@ def main():
 
 #
 def get_user_responses():
-    """
-    Docstring for main loop
-    :return:
-    :rtype:
-    """
+    """"""
 
     # Utils class reference
     utils = Utils()
@@ -132,15 +127,3 @@ def get_user_responses():
 
         # end while loop
         running = False
-
-
-def TEST_PANDAS(attributes_dict_vars):
-    """ This function takes all the attributes from Event class and puts it into an .xlsx file """
-
-    # create path and file name
-    file_path = "TestFile.xlsx"
-
-    # change variable column before packaging the program for use
-    df = pd.DataFrame.from_dict(attributes_dict_vars, orient='index', columns=['AML'])
-    df.index.name = 'Profit Share Report'
-    df.to_excel(file_path)

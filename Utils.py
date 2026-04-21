@@ -1,13 +1,20 @@
 import os # used to clear terminal screen
 import time
+import pandas as pd
+
 
 class Utils:
-    # clear the screen
-    def clear_console():
-        """
-        Docstring for clear_screen
-        """
-        os.system('cls' if os.name == 'nt' else 'clear')
+
+    def TEST_PANDAS(attributes_dict_vars):
+        """ This function takes all the attributes from Event class and puts it into an .xlsx file """
+
+        # create path and file name
+        file_path = "TestFile.xlsx"
+
+        # change variable column before packaging the program for use
+        df = pd.DataFrame.from_dict(attributes_dict_vars, orient='index', columns=['AML'])
+        df.index.name = 'Profit Share Report'
+        df.to_excel(file_path)
 
 
     # check if input is a valid float
@@ -82,3 +89,11 @@ class Utils:
         print("|                                         |")
         print("+-----------------------------------------+")
         print()
+
+
+    # clear the screen
+    def clear_console():
+        """
+        Docstring for clear_screen
+        """
+        os.system('cls' if os.name == 'nt' else 'clear')
