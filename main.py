@@ -17,7 +17,7 @@
 #   - TEST WITH REAL DATA TO CONFIRM ACCURACY OF LOGIC ❌❌❌
 #       - test with real data was incorrect possibly due to use of float
 #
-#   - Refactor data types from float to int
+#   - Refactor data types from float to int:
 #       - divide data by 100 to achieve dollar and cent amount without floating point errors
 #
 #   - Refactor::
@@ -81,7 +81,7 @@ def main():
 
 #
 def get_user_responses():
-    """"""
+    """ This function gets all the relevant data from the user """
 
     # Utils class reference
     utils = Utils()
@@ -127,3 +127,45 @@ def get_user_responses():
 
         # end while loop
         running = False
+
+
+    def event_replacement(prompts):
+        """ replacing event class due to it's limitations """
+
+        # 14 user input values
+        # entity = prompts[0]
+        # date = prompts[1]
+        # cash_end = prompts[2]
+        # credit_card = prompts[3]
+        # turkey_returned = prompts[4]
+        # ham_returned = prompts[5]
+        # beef_returned = prompts[6]
+        # turkey_price = prompts[7]
+        # ham_price = prompts[8]
+        # beef_price = prompts[9]
+        # turkey_purchased = prompts[10]
+        # ham_purchased = prompts[11]
+        # beef_purchased = prompts[12]
+        # bread_purchased = prompts[13]
+        user_input_values = {
+            "entity": "",
+            "date": "",
+            "cash_end" : 0,
+            "credit_card" : 0,
+            "turkey_returned" : 0,
+            "ham_returned" : 0,
+            "beef_returned" : 0,
+            "turkey_price" : 0,
+            "ham_price" : 0,
+            "beef_price" : 0,
+            "turkey_purchased" : 0,
+            "ham_purchased" : 0,
+            "beef_purchased" : 0,
+            "bread_purchased" : 0
+        }
+
+        # needs to be tested
+        for prompt in prompts:
+            user_input_values[prompt] = prompt
+        
+
