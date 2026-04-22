@@ -54,10 +54,22 @@ from Utils import *
 
 responses = []
 
+
 def main():
     """ Main method that calls all other functions """
     # 
     get_user_responses()
+
+    print("PRINTING RESPONSES")
+    print(responses)
+    print("DONEPRINTING RESPONSES")
+
+
+    print("PRINTING EVENT CLASS REPLACEMENT")
+    event_class_replacement(responses)
+    print("PRINTING EVENT CLASS REPLACEMENT")
+
+
 
     # send the responses to MyEvent.py
     myvar = Event(*responses)
@@ -69,6 +81,7 @@ def main():
 
     # test printing all values
     # items()
+    print("Using items()")
     for key, value in attributes_dict_vars.items():
         print(f"*{key}: {value}")
 
@@ -129,43 +142,42 @@ def get_user_responses():
         running = False
 
 
-    def event_replacement(prompts):
-        """ replacing event class due to it's limitations """
+def event_class_replacement(prompts):
+    """ replacing event class due to it's limitations """
 
-        # 14 user input values
-        # entity = prompts[0]
-        # date = prompts[1]
-        # cash_end = prompts[2]
-        # credit_card = prompts[3]
-        # turkey_returned = prompts[4]
-        # ham_returned = prompts[5]
-        # beef_returned = prompts[6]
-        # turkey_price = prompts[7]
-        # ham_price = prompts[8]
-        # beef_price = prompts[9]
-        # turkey_purchased = prompts[10]
-        # ham_purchased = prompts[11]
-        # beef_purchased = prompts[12]
-        # bread_purchased = prompts[13]
-        user_input_values = {
-            "entity": "",
-            "date": "",
-            "cash_end" : 0,
-            "credit_card" : 0,
-            "turkey_returned" : 0,
-            "ham_returned" : 0,
-            "beef_returned" : 0,
-            "turkey_price" : 0,
-            "ham_price" : 0,
-            "beef_price" : 0,
-            "turkey_purchased" : 0,
-            "ham_purchased" : 0,
-            "beef_purchased" : 0,
-            "bread_purchased" : 0
-        }
+    # 14 user input values
+    # entity = prompts[0]
+    # date = prompts[1]
+    # cash_end = prompts[2]
+    # credit_card = prompts[3]
+    # turkey_returned = prompts[4]
+    # ham_returned = prompts[5]
+    # beef_returned = prompts[6]
+    # turkey_price = prompts[7]
+    # ham_price = prompts[8]
+    # beef_price = prompts[9]
+    # turkey_purchased = prompts[10]
+    # ham_purchased = prompts[11]
+    # beef_purchased = prompts[12]
+    # bread_purchased = prompts[13]
+    user_input_values = {
+        "entity": "",
+        "date": "",
+        "cash_end" : 0,
+        "credit_card" : 0,
+        "turkey_returned" : 0,
+        "ham_returned" : 0,
+        "beef_returned" : 0,
+        "turkey_price" : 0,
+        "ham_price" : 0,
+        "beef_price" : 0,
+        "turkey_purchased" : 0,
+        "ham_purchased" : 0,
+        "beef_purchased" : 0,
+        "bread_purchased" : 0
+    }
 
-        # needs to be tested
-        for prompt in prompts:
-            user_input_values[prompt] = prompt
-        
+    # TODO test: prompt_answers
+    user_input_values = {index: value for index, value in enumerate(prompts)}
 
+    print(user_input_values)
