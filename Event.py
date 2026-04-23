@@ -67,3 +67,14 @@ class Event:
 
         # shared profit ( profit / 2 )
         self.shared: int = self.profit / 2
+
+
+
+
+        # 
+        # Code graveyard
+        # 
+        # test retrieval of class attributes
+        # vars() with an instance variable is the solution
+        # attributes_dict_vars = vars(myvar)
+        # print(f"Using vars(): {attributes_dict_vars}")

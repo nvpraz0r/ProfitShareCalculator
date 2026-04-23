@@ -1,8 +1,4 @@
-#
-# future plans:
-#   - use tkinter to incorporate a GUI
-#
-# to do:
+# TODO:
 #   - fix the prompts to reflect proper user prompts ✅
 #   - hook up inputs to Event ✅
 #   - dummy up responses so I don't have to manually enter 14 variables when testing ✅
@@ -26,6 +22,10 @@
 #           - clean up functions and methods
 #           - clean up files
 #           - Add how to use in README doc and in comments
+# 
+#   - Integrate GUI
+# 
+# 
 
 from Event import *
 from Utils import *
@@ -34,55 +34,49 @@ from Utils import *
 # entity, date, cash_end, credit_card,turkey_returned,
 # ham_returned, beef_returned,turkey_price, ham_price,
 # beef_price,turkey_purchased, ham_purchased, beef_purchased,bread_purchased
-# responses = [
-#              "Scouts",
-#              "09/09/26",
-#              1166.54,
-#              213.46,
-#              0,
-#              0,
-#              0,
-#              5.59,
-#              1.99,
-#              4.25,
-#              8,
-#              12,
-#              36,
-#              4
-# ]
-
-
-responses = []
+# responses = []
+responses = [
+             "Scouts",
+             "09/09/26",
+             1166.54,
+             213.46,
+             0,
+             0,
+             0,
+             5.59,
+             1.99,
+             4.25,
+             8,
+             12,
+             36,
+             4
+]
 
 
 def main():
     """ Main method that calls all other functions """
-    # 
-    get_user_responses()
+
+    # uncomment for data gathering
+    # get_user_responses()
 
     print("PRINTING RESPONSES")
     print(responses)
-    print("DONEPRINTING RESPONSES")
+    print("DONE PRINTING RESPONSES")
 
 
     print("PRINTING EVENT CLASS REPLACEMENT")
     event_class_replacement(responses)
-    print("PRINTING EVENT CLASS REPLACEMENT")
+    print("DONE PRINTING EVENT CLASS REPLACEMENT")
 
 
+    # 
+    event_data_dict = event_class_replacement(responses)
 
-    # send the responses to MyEvent.py
-    myvar = Event(*responses)
-
-    # test retrieval of class attributes
-    # vars() with an instance variable is the solution
-    attributes_dict_vars = vars(myvar)
-    print(f"Using vars(): {attributes_dict_vars}")
 
     # test printing all values
     # items()
     print("Using items()")
-    for key, value in attributes_dict_vars.items():
+    for key, value in event_data_dict.items():
         print(f"*{key}: {value}")
 
     # works, just don't need it to work right now
@@ -142,7 +136,9 @@ def get_user_responses():
         running = False
 
 
-def event_class_replacement(prompts):
+
+# TODO: 
+def event_class_replacement(user_input_values):
     """ replacing event class due to it's limitations """
 
     # 14 user input values
@@ -160,24 +156,27 @@ def event_class_replacement(prompts):
     # ham_purchased = prompts[11]
     # beef_purchased = prompts[12]
     # bread_purchased = prompts[13]
-    user_input_values = {
-        "entity": "",
-        "date": "",
-        "cash_end" : 0,
-        "credit_card" : 0,
-        "turkey_returned" : 0,
-        "ham_returned" : 0,
-        "beef_returned" : 0,
-        "turkey_price" : 0,
-        "ham_price" : 0,
-        "beef_price" : 0,
-        "turkey_purchased" : 0,
-        "ham_purchased" : 0,
-        "beef_purchased" : 0,
-        "bread_purchased" : 0
-    }
 
-    # TODO test: prompt_answers
-    user_input_values = {index: value for index, value in enumerate(prompts)}
+    user_input_keys = [
+        "entity",
+        "date",
+        "cash_end",
+        "credit_card",
+        "turkey_returned",
+        "ham_returned",
+        "beef_returned",
+        "turkey_price",
+        "ham_price",
+        "beef_price",
+        "turkey_purchased",
+        "ham_purchased",
+        "beef_purchased",
+        "bread_purchased"
+    ]
 
-    print(user_input_values)
+    merged_dict = dict(zip(user_input_keys, user_input_values))
+
+    for key, value in merged_dict.items():
+        print(f"*{key}: {value}")
+
+    return merged_dict
