@@ -87,60 +87,56 @@ def main():
 
 
 # TODO: calculate the totals
-def event_class_replacement(user_input_values):
-    """ replacing event class due to it's limitations """
+def event_class_replacement(user_input_values) -> dict:
+    """
+    Calculates the raw input data into 
+
+    :param user_input_values The raw input data from the user
+
+    :type user_input_values list
+
+    :return The converted event data
+
+    :rtype dictionary
+    """
 
     # 14 user input values
-    # entity = prompts[0]
-    # date = prompts[1]
-    # cash_end = prompts[2]
-    # credit_card = prompts[3]
-    # turkey_returned = prompts[4]
-    # ham_returned = prompts[5]
-    # beef_returned = prompts[6]
-    # turkey_price = prompts[7]
-    # ham_price = prompts[8]
-    # beef_price = prompts[9]
-    # turkey_purchased = prompts[10]
-    # ham_purchased = prompts[11]
-    # beef_purchased = prompts[12]
-    # bread_purchased = prompts[13]
-
-    user_input_keys = [
-        "entity",
-        "date",
-        "cash_end",
-        "credit_card",
-        "turkey_returned",
-        "ham_returned",
-        "beef_returned",
-        "turkey_price",
-        "ham_price",
-        "beef_price",
-        "turkey_purchased",
-        "ham_purchased",
-        "beef_purchased",
-        "bread_purchased"
-    ]
-
-    merged_dict = dict(zip(user_input_keys, user_input_values))
-
-    for key, value in merged_dict.items():
-        print(f"*{key}: {value}")
+    # entity = user_input_values[0]
+    # date = user_input_values[1]
+    # cash_end = user_input_values[2]
+    # credit_card = user_input_values[3]
+    # turkey_returned = user_input_values[4]
+    # ham_returned = user_input_values[5]
+    # beef_returned = user_input_values[6]
+    # turkey_price = user_input_values[7]
+    # ham_price = user_input_values[8]
+    # beef_price = user_input_values[9]
+    # turkey_purchased = user_input_values[10]
+    # ham_purchased = user_input_values[11]
+    # beef_purchased = user_input_values[12]
+    # bread_purchased = user_input_values[13]
 
 
     # Calculating the totals 
 
-    # raw indicated variables are used for calculations
-    # converted indicated variables are used for printing
-    credit_card_raw = 0
-    credit_card_converted = 1000 / 100
+
+    credit_card_raw = 0                 # raw indicated variables are used for calculations
+    credit_card_converted = 1000 / 100  # converted indicated variables are used for printing
 
 
 
     # 
 
-    return merged_dict
+    # TODO: manually enter 
+    converted_user_data = {
+        "entity" : user_input_values[0],
+        "date" : user_input_values[1],
+        "cash_start" : 600,
+        "cash_end" : user_input_values[2]
+    }
+
+
+    return converted_user_data
 
 
 #
