@@ -86,6 +86,63 @@ def main():
     #     print(f"An error occurred while creating the excel file: '{e}'")
 
 
+# TODO: calculate the totals
+def event_class_replacement(user_input_values):
+    """ replacing event class due to it's limitations """
+
+    # 14 user input values
+    # entity = prompts[0]
+    # date = prompts[1]
+    # cash_end = prompts[2]
+    # credit_card = prompts[3]
+    # turkey_returned = prompts[4]
+    # ham_returned = prompts[5]
+    # beef_returned = prompts[6]
+    # turkey_price = prompts[7]
+    # ham_price = prompts[8]
+    # beef_price = prompts[9]
+    # turkey_purchased = prompts[10]
+    # ham_purchased = prompts[11]
+    # beef_purchased = prompts[12]
+    # bread_purchased = prompts[13]
+
+    user_input_keys = [
+        "entity",
+        "date",
+        "cash_end",
+        "credit_card",
+        "turkey_returned",
+        "ham_returned",
+        "beef_returned",
+        "turkey_price",
+        "ham_price",
+        "beef_price",
+        "turkey_purchased",
+        "ham_purchased",
+        "beef_purchased",
+        "bread_purchased"
+    ]
+
+    merged_dict = dict(zip(user_input_keys, user_input_values))
+
+    for key, value in merged_dict.items():
+        print(f"*{key}: {value}")
+
+
+    # Calculating the totals 
+
+    # raw indicated variables are used for calculations
+    # converted indicated variables are used for printing
+    credit_card_raw = 0
+    credit_card_converted = 1000 / 100
+
+
+
+    # 
+
+    return merged_dict
+
+
 #
 def get_user_responses():
     """ This function gets all the relevant data from the user """
@@ -134,49 +191,3 @@ def get_user_responses():
 
         # end while loop
         running = False
-
-
-
-# TODO: 
-def event_class_replacement(user_input_values):
-    """ replacing event class due to it's limitations """
-
-    # 14 user input values
-    # entity = prompts[0]
-    # date = prompts[1]
-    # cash_end = prompts[2]
-    # credit_card = prompts[3]
-    # turkey_returned = prompts[4]
-    # ham_returned = prompts[5]
-    # beef_returned = prompts[6]
-    # turkey_price = prompts[7]
-    # ham_price = prompts[8]
-    # beef_price = prompts[9]
-    # turkey_purchased = prompts[10]
-    # ham_purchased = prompts[11]
-    # beef_purchased = prompts[12]
-    # bread_purchased = prompts[13]
-
-    user_input_keys = [
-        "entity",
-        "date",
-        "cash_end",
-        "credit_card",
-        "turkey_returned",
-        "ham_returned",
-        "beef_returned",
-        "turkey_price",
-        "ham_price",
-        "beef_price",
-        "turkey_purchased",
-        "ham_purchased",
-        "beef_purchased",
-        "bread_purchased"
-    ]
-
-    merged_dict = dict(zip(user_input_keys, user_input_values))
-
-    for key, value in merged_dict.items():
-        print(f"*{key}: {value}")
-
-    return merged_dict
