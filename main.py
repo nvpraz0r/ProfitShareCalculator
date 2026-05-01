@@ -100,6 +100,9 @@ def event_class_replacement(user_input_values) -> dict:
     :rtype dictionary
     """
 
+    # user_input_values DS contains all of the user input values
+    # follow the indicated values below for their place in the array
+    # 
     # 14 user input values
     # entity = user_input_values[0]
     # date = user_input_values[1]
@@ -119,9 +122,72 @@ def event_class_replacement(user_input_values) -> dict:
 
     # Calculating the totals 
 
+    # RAW indicated variables are used for calculations
+    # CONVERTED indicated variables are used for printing
 
-    credit_card_raw = 0                 # raw indicated variables are used for calculations
-    credit_card_converted = 1000 / 100  # converted indicated variables are used for printing
+    # 
+    CASH_START = 600
+
+    # 
+    cash_end_raw = user_input_values[2]
+    cash_end_converted = user_input_values[2] / 100
+
+    # 
+    credit_card_raw = user_input_values[3]
+    credit_card_converted = credit_card_raw / 100
+
+    # 
+    credit_card_tax_raw = 0
+    credit_card_tax_converted = (credit_card_tax_raw * 3) / 100
+
+    # 
+    credit_card_net_raw = credit_card_raw - credit_card_tax_raw
+    credit_card_net_converted = (credit_card_raw - credit_card_tax_raw) / 100
+
+    # 
+    total_sales_raw = (credit_card_net_raw + cash_end_raw) - CASH_START
+    total_sales_converted = ((credit_card_net_raw + cash_end_raw) - CASH_START) / 100
+
+    # 
+    turkey_returned_lbs = 0
+    ham_returned_lbs = 0
+    beef_returned_lbs = 0
+
+    # 
+    turkey_price = 0
+    ham_price = 0
+    beef_price = 0
+
+    # 
+    turkey_purchased_lbs = 0
+    ham_purchased_lbs = 0
+    beef_purchased_lbs = 0
+
+    # 
+    bread_purchased = 0
+
+    # 
+    total_returned_raw = (turkey_returned_lbs * turkey_price) + (ham_returned_lbs * ham_price) + (beef_returned_lbs * beef_price)
+    total_returned_converted = ((turkey_returned_lbs * turkey_price) + (ham_returned_lbs * ham_price) + (beef_returned_lbs * beef_price)) / 100
+
+    # 
+    gross_raw = total_returned_raw + total_sales_raw
+    gross_converted = (total_returned_raw + total_sales_raw) / 100
+
+    # 
+    total_expenses_raw = (turkey_purchased_lbs * turkey_price) + (ham_purchased_lbs * ham_price) + (beef_purchased_lbs * beef_price) + bread_purchased
+    total_expenses_converted = ((turkey_purchased_lbs * turkey_price) + (ham_purchased_lbs * ham_price) + (beef_purchased_lbs * beef_price) + bread_purchased) / 100
+
+    # 
+    profit_raw = gross_raw - total_expenses_raw
+    profit_converted = (gross_raw - total_expenses_raw) / 100
+
+    # 
+    shared_profit_raw = profit_raw / 2
+    shared_profit_converted = (profit_raw / 2) / 100
+    
+
+
 
 
 
@@ -132,7 +198,8 @@ def event_class_replacement(user_input_values) -> dict:
         "entity" : user_input_values[0],
         "date" : user_input_values[1],
         "cash_start" : 600,
-        "cash_end" : user_input_values[2]
+        "cash_end" : cash_end_converted,
+
     }
 
 
