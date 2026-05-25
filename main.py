@@ -141,68 +141,62 @@ def event_class_replacement(user_input_values) -> dict:
 
     # 
     cash_end_raw = user_input_values[2]
-    cash_end_converted = user_input_values[2] / 100
+    cash_end_converted = cash_end_raw / 100
 
     # 
     credit_card_raw = user_input_values[3]
     credit_card_converted = credit_card_raw / 100
 
     # 
-    credit_card_tax_raw = 0
-    credit_card_tax_converted = (credit_card_tax_raw * 3) / 100
+    credit_card_tax_raw = (3 / 100) * credit_card_raw
+    credit_card_tax_converted = credit_card_tax_raw / 100
 
     # 
     credit_card_net_raw = credit_card_raw - credit_card_tax_raw
-    credit_card_net_converted = (credit_card_raw - credit_card_tax_raw) / 100
+    credit_card_net_converted = credit_card_net_raw / 100
 
     # 
     total_sales_raw = (credit_card_net_raw + cash_end_raw) - CASH_START
-    total_sales_converted = ((credit_card_net_raw + cash_end_raw) - CASH_START) / 100
+    total_sales_converted = total_sales_raw / 100
+
+    # returned meat in pounds
+    turkey_returned_lbs = user_input_values[4]
+    ham_returned_lbs = user_input_values[5]
+    beef_returned_lbs = user_input_values[6]
+
+    # price of meat per pound
+    turkey_price = user_input_values[7]
+    ham_price = user_input_values[8]
+    beef_price = user_input_values[9]
 
     # 
-    turkey_returned_lbs = 0
-    ham_returned_lbs = 0
-    beef_returned_lbs = 0
+    turkey_purchased_lbs = user_input_values[10]
+    ham_purchased_lbs = user_input_values[11]
+    beef_purchased_lbs = user_input_values[12]
 
     # 
-    turkey_price = 0
-    ham_price = 0
-    beef_price = 0
-
-    # 
-    turkey_purchased_lbs = 0
-    ham_purchased_lbs = 0
-    beef_purchased_lbs = 0
-
-    # 
-    bread_purchased = 0
+    bread_purchased = user_input_values[13]
 
     # 
     total_returned_raw = (turkey_returned_lbs * turkey_price) + (ham_returned_lbs * ham_price) + (beef_returned_lbs * beef_price)
-    total_returned_converted = ((turkey_returned_lbs * turkey_price) + (ham_returned_lbs * ham_price) + (beef_returned_lbs * beef_price)) / 100
+    total_returned_converted = total_returned_raw / 100
 
     # 
     gross_raw = total_returned_raw + total_sales_raw
-    gross_converted = (total_returned_raw + total_sales_raw) / 100
+    gross_converted = gross_raw / 100
 
     # 
     total_expenses_raw = (turkey_purchased_lbs * turkey_price) + (ham_purchased_lbs * ham_price) + (beef_purchased_lbs * beef_price) + bread_purchased
-    total_expenses_converted = ((turkey_purchased_lbs * turkey_price) + (ham_purchased_lbs * ham_price) + (beef_purchased_lbs * beef_price) + bread_purchased) / 100
+    total_expenses_converted = total_expenses_raw / 100
 
     # 
     profit_raw = gross_raw - total_expenses_raw
-    profit_converted = (gross_raw - total_expenses_raw) / 100
+    profit_converted = profit_raw / 100
 
     # 
     shared_profit_raw = profit_raw / 2
-    shared_profit_converted = (profit_raw / 2) / 100
-    
+    shared_profit_converted = shared_profit_raw / 100
 
-
-
-
-
-    # 
 
     # TODO: manually enter converted data values ✅
     converted_user_data = {
