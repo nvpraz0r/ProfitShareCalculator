@@ -86,7 +86,7 @@ def main():
     #     print(f"An error occurred while creating the excel file: '{e}'")
 
 
-# TODO: calculate the totals
+# TODO: calculate the totals✅
 def event_class_replacement(user_input_values) -> dict:
     """
     Calculates the raw input data into 
@@ -193,13 +193,28 @@ def event_class_replacement(user_input_values) -> dict:
 
     # 
 
-    # TODO: manually enter 
+    # TODO: manually enter converted data values ✅
     converted_user_data = {
         "entity" : user_input_values[0],
         "date" : user_input_values[1],
         "cash_start" : 600,
         "cash_end" : cash_end_converted,
-
+        "credit card": credit_card_converted,
+        "credit card tax": credit_card_tax_converted,
+        "credit card net": credit_card_net_converted,
+        "total sales": total_sales_converted,
+        "turkey returned (pounds)": turkey_returned_lbs,
+        "ham returned (pounds)": ham_returned_lbs,
+        "beef returned (pounds)": beef_returned_lbs,
+        "turkey price": turkey_price,
+        "ham price": ham_price,
+        "beef price": beef_price,
+        "bread purchased": bread_purchased,
+        "total returned": total_returned_converted,
+        "gross": gross_converted,
+        "total expenses": total_expenses_converted,
+        "profit": profit_converted,
+        "shared": shared_profit_converted
     }
 
 
