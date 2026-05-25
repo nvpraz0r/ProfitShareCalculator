@@ -14,7 +14,7 @@
 #       - test with real data was incorrect possibly due to use of float
 #
 #   - Refactor data types from float to int:
-#       - divide data by 100 to achieve dollar and cent amount without floating point errors
+#       - divide data by 100 to achieve dollar and cent amount without floating point errors ✅
 #
 #   - Refactor::
 #       - clean up code base:
@@ -31,25 +31,36 @@ from Event import *
 from Utils import *
 
 
-# entity, date, cash_end, credit_card,turkey_returned,
-# ham_returned, beef_returned,turkey_price, ham_price,
-# beef_price,turkey_purchased, ham_purchased, beef_purchased,bread_purchased
+# entity,
+# date, 
+# cash_end,
+# credit_card,
+# turkey_returned,
+# ham_returned, 
+# beef_returned,
+# turkey_price, 
+# ham_price,
+# beef_price,
+# turkey_purchased, 
+# ham_purchased, 
+# beef_purchased,
+# bread_purchased
 # responses = []
 responses = [
-             "Scouts",
+             "BSFA",
              "09/09/26",
-             1166.54,
-             213.46,
+             120811,
+             37080,
              0,
              0,
              0,
-             5.59,
-             1.99,
-             4.25,
-             8,
-             12,
-             36,
-             4
+             586,
+             410,
+             570,
+             18,
+             23,
+             64,
+             6
 ]
 
 
